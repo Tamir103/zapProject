@@ -4,7 +4,7 @@
   <test thread-count="5" name="zapTests">
     <classes>
       <class name="finalProject_zapGuitars.footerTest"/>
-      <class name="finalProject_zapGuitars.multiChoiceWinTest"/>
+<!-- <class name="finalProject_zapGuitars.navigateToGuitars"/>  -->      
     </classes>
   </test> <!-- zapTests -->
 </suite> <!-- Suite -->

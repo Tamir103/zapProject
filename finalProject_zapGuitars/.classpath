@@ -35,5 +35,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/Eclipse/selenium-java-3.141.59+ssh/libs/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="D:/Eclipse/jar_files/ExtentReport/extentreports-5.0.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

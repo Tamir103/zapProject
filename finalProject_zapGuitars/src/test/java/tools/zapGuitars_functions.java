@@ -1,23 +1,82 @@
 package tools;
 
+import java.awt.AWTException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.awt.AWTException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import java.util.Optional;
 
 import javax.naming.spi.DirStateFactory.Result;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class zapGuitars_functions extends setUp {
+import com.aventstack.extentreports.MediaEntityBuilder;
 
-	public void printToReport(boolean testResult,String testName, boolean exception) {
+public class zapGuitars_functions extends setUp {
+	
+	public static void convertFileEncoding(String sourcePath, Optional<String> targetPath, Optional<String> targetEncoding) throws IOException, InterruptedException{
+	    
+	    // Wait for file to exist - 10 seconds
+	    for (int i=0; i<20 ; i++) {
+	      if(!Files.exists(Paths.get(sourcePath)))
+	        Thread.sleep(500);
+	      else
+	        break;
+	    }
+	          
+	    File infile = new File(sourcePath);
+	    
+	    String trgtPath = targetPath.orElse(sourcePath + "Temp") ;
+	    String trgtEncoding = targetEncoding.orElse("UTF-8");
+	    File outfile = new File(trgtPath);
+	    
+	    // Convert    
+	    InputStreamReader fis = new InputStreamReader(new FileInputStream(infile));
+	    Reader in = new InputStreamReader(new FileInputStream(infile),fis.getEncoding());
+	    Writer out = new OutputStreamWriter(new FileOutputStream(outfile), trgtEncoding);
+
+	    int c;
+
+	    while ((c = in.read()) != -1){
+	      out.write(c);}
+
+	    in.close();
+	    out.close();
+	    fis.close();
+
+	    // if target path not specified - change the original file to target file
+	    if (!targetPath.isPresent()) {
+	      infile.delete();
+	      outfile.renameTo(new File(sourcePath));
+	    }
+	    
+	    
+	  }
+
+	public void printToReport(boolean testResult, String testName, boolean exception) throws AWTException, IOException {
 		
 		if (!exception) {
 			if (testResult) {
 				test.pass(testName + " passed");
 			} else {
-				test.fail(testName + " failed");
+				test.fail(testName + " failed", MediaEntityBuilder.createScreenCaptureFromPath(exm.CaptureScreen()).build());
 			}
 		
 		} else {
@@ -38,7 +97,7 @@ public class zapGuitars_functions extends setUp {
 		
 	}
 
-	public boolean linkTest(WebElement link, WebDriver driver, String expectedTitle) throws InterruptedException {
+	public boolean linkTest(WebElement link, WebDriver driver, String expectedTitle, ArrayList<String> tabs) throws InterruptedException {
 		
 		String target = link.getAttribute("target");
 		
@@ -46,14 +105,12 @@ public class zapGuitars_functions extends setUp {
 			link.click();
 			Thread.sleep(2000);
 			
-			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+//			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			tabs = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs.get(1));
 			
 			String webPageTitle = driver.getTitle();
 			webPageTitle.trim();
-			
-			driver.close();
-			driver.switchTo().window(tabs.get(0));
 			
 				if (webPageTitle.equalsIgnoreCase(expectedTitle)) {
 					return true;
@@ -107,10 +164,11 @@ public class zapGuitars_functions extends setUp {
 	
 	public boolean searchBox(WebElement searchBox, WebElement searchButton, String searchString, String expectedTitle) throws InterruptedException {
 		
-//		searchBox.click();
-//		Thread.sleep(500);
+		searchBox.click();
+		Thread.sleep(500);
+
+		action.moveToElement(searchBox).sendKeys(searchString).build().perform();
 		
-		searchBox.sendKeys(searchString);
 		Thread.sleep(1000);
 		
 		searchButton.click();
@@ -120,6 +178,16 @@ public class zapGuitars_functions extends setUp {
 		pageTitle.trim();
 		
 		boolean result = (pageTitle.equals(expectedTitle)) ? true : false;
+		return result;
+		
+	}
+	
+	public boolean guitarsPage(String guitarsPageTiltle) {
+		
+		String currentPageTitle = driver.getTitle();
+		currentPageTitle.trim();
+		
+		boolean result = (currentPageTitle.equals(guitarsPageTiltle)) ? true : false;
 		return result;
 		
 	}

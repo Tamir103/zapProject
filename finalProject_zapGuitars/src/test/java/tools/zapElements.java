@@ -12,12 +12,31 @@ public class zapElements {
 	/*
 	 Main search box
 	  */
-	@FindBy (id = "keyword")
+	@FindBy (id = "select2-keyword-container")
 	public static WebElement mainHeaderSearchBox;
 	
 	@FindBy (xpath = "//input[@aria-label='לחץ לחיפוש באתר']")
 	public static WebElement mainSearchButton;
 
+	
+	/*
+	 Main Menus
+	  */
+	@FindBy (linkText = "כל הקטגוריות")
+	public static WebElement allCategories;
+	
+	@FindBy (xpath = "//li[@data-title='פנאי וספורט']")
+	public static WebElement categoriesSubmenuSportNLeisure;
+	
+	@FindBy (linkText = "גיטרות")
+	public static WebElement submenuGuitars;
+	
+	@FindBy (linkText = "פנאי וספורט")
+	public static WebElement mainSportNLeisure;
+	
+	@FindBy (xpath = "//ul[@class='all-cat']/li[4]") //list may change
+	public static WebElement musicMenu;
+	
 	/*
 	 Footer links
 	 */
