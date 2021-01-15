@@ -37,7 +37,7 @@ public class footerTest extends setUp {
 	static String iframeId;
 	static String iframeDiv_displayValue;
 	static boolean clickLink;
-	static ArrayList<String> tabs;
+	
 
   @Test (groups = "about", priority = 1, enabled = true)
   public void aboutLinkTest() throws InterruptedException, AWTException, IOException {
@@ -46,7 +46,7 @@ public class footerTest extends setUp {
 	  expectedTitle = "אודות zap השוואת מחירים";
 
 	 try { 
-		 isPageTitleTrue = func.linkTest(elements.aboutLink, driver, expectedTitle, tabs); // Method that returns a boolean, checks if page title is as expected 
+		 isPageTitleTrue = func.linkTest(elements.aboutLink, driver, expectedTitle); // Method that returns a boolean, checks if page title is as expected 
 	 
 		 func.printToReport(isPageTitleTrue, testName, false);						// Method that prints to Extent Report (exception=false)
 	 
@@ -69,7 +69,7 @@ public class footerTest extends setUp {
 	  expectedTitle = "תנאי שימוש - זאפ השוואת מחירים";
 	 
 	  try {
-		  isPageTitleTrue = func.linkTest(elements.termsLink, driver, expectedTitle, tabs);
+		  isPageTitleTrue = func.linkTest(elements.termsLink, driver, expectedTitle);
 			 
 		  func.printToReport(isPageTitleTrue, testName, false);
 			 
@@ -91,7 +91,7 @@ public class footerTest extends setUp {
 	  expectedTitle = "זאפ השואת מחירים - זאפ שלי";
 	
 	 try { 
-		 isPageTitleTrue = func.linkTest(elements.personalLink, driver, expectedTitle, tabs);
+		 isPageTitleTrue = func.linkTest(elements.personalLink, driver, expectedTitle);
 	  
 		 func.printToReport(isPageTitleTrue, testName, false);
 	  
@@ -113,7 +113,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "שירות לקוחות זאפ השוואת מחירים";
 	
 	try { 
-		isPageTitleTrue = func.linkTest(elements.contactLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.contactLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -135,7 +135,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "שאלות כלליות - זאפ השוואת מחירים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.qNaLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.qNaLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -157,7 +157,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "מדריך החנויות"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.shopGuideLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.shopGuideLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -181,7 +181,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "נפילת מחירים - זאפ השוואת מחירים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.priceDropLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.priceDropLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -204,7 +204,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "זאפ השוואת מחירים - כל הקטגוריות"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.allCategoriesLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.allCategoriesLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -227,7 +227,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "חוות דעת אחרונות על מוצרים - זאפ השוואת מחירים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.ReviewsLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.ReviewsLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -280,7 +280,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "2020 Shopping IL - כל המבצעים החמים של שופינג IL בזאפ"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.shopingILLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.shopingILLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -303,7 +303,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "הוספת חנות לזאפ - הופעה בזאפ השוואת מחירים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.addYourShopLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.addYourShopLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -326,7 +326,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "פרסום בזאפ השוואת מחירים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.adLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.adLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -342,18 +342,26 @@ public class footerTest extends setUp {
  }
  
  
- @Test (groups = {"advertising", "new tab1"}, priority = 14)
+ @Test (groups = "advertising", priority = 14)
  public void shopsAndImportsLink() throws AWTException, IOException {
 	 
 	 testName = "Shops and Imports interface link";
 	 expectedTitle = "ממשק חנויות"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.shopsAndImportsLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.shopsAndImportsLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
-		func.returnToMainPage();
+		// close tabs part due to new tabs being opened from this link	
+		try {
+			func.closeTab();
+		
+			func.returnToMainPage();
+			
+		} catch (Exception e) {
+			func.printToReport(isPageTitleTrue, testName, true);
+		}
 	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
@@ -365,19 +373,27 @@ public class footerTest extends setUp {
  }
  
  
- @Test (groups = {"advertising", "new tab2"}, priority = 15)
+ @Test (groups = "advertising", priority = 15)
  public void adInterfaceLink() throws AWTException, IOException {
 	 
 	 testName = "Advertising interface Link";
 	 expectedTitle = "ממשק מפרסמים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.adInterfaceLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.adInterfaceLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
-		func.returnToMainPage();
-	 
+		// close tabs part due to new tabs being opened from this link	
+		try {
+			func.closeTab();
+		
+			func.returnToMainPage();
+			
+		} catch (Exception e) {
+			func.printToReport(isPageTitleTrue, testName, true);
+		}
+		
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
@@ -385,14 +401,8 @@ public class footerTest extends setUp {
 			
 		  Assert.assertEquals(false, true , "An Exception occurred");
 	}
+	
  }
- 
-
- @AfterGroups ({"new tab1"/*, "new tab2"*/})
- public void closeTabs() {
-	 	driver.close();
-		driver.switchTo().window(tabs.get(0));
-}
  
 
  @Test (groups = "content world", priority = 16)
@@ -402,7 +412,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "טיסות – zap תיירות השוואת מחירי טיסות"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.tourismLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.tourismLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -425,7 +435,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "זאפ מרקט - הזאפ של הסופרים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.supermarketLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.supermarketLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -447,7 +457,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "זאפ פלוס – דילים והנחות במחירים המשתלמים ביותר!"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.dailyDealsLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.dailyDealsLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -469,7 +479,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "TAVO | - zap group"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.tavoLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.tavoLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -491,7 +501,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "מדריכי קנייה, סקירות מוצרים, השוואת מחירים - WiseBuy"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.wiseBuyLink, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.wiseBuyLink, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -513,7 +523,7 @@ public class footerTest extends setUp {
 	 expectedTitle = "זאפ גרופ - שיווק דיגיטלי לעסקים"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(elements.zap360Link, driver, expectedTitle, tabs);
+		isPageTitleTrue = func.linkTest(elements.zap360Link, driver, expectedTitle);
 	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
@@ -537,7 +547,7 @@ public class footerTest extends setUp {
 	  driver.get("https://www.zap.co.il/");
 	  driver.manage().window().maximize();
 	  
-//	  tabs = new ArrayList<String>(driver.getWindowHandles());
+//	  s = new ArrayList<String>(driver.getWindowHandles());
 	  
 	//sampling all the elements from elements class, if web page is refreshed all samples needs to be sampled again		
 	  elements = PageFactory.initElements(driver, zapElements.class);

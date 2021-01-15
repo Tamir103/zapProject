@@ -31,6 +31,8 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 
 public class zapGuitars_functions extends setUp {
 	
+	static ArrayList<String> tabs;
+	
 	public static void convertFileEncoding(String sourcePath, Optional<String> targetPath, Optional<String> targetEncoding) throws IOException, InterruptedException{
 	    
 	    // Wait for file to exist - 10 seconds
@@ -97,7 +99,7 @@ public class zapGuitars_functions extends setUp {
 		
 	}
 
-	public boolean linkTest(WebElement link, WebDriver driver, String expectedTitle, ArrayList<String> tabs) throws InterruptedException {
+	public boolean linkTest(WebElement link, WebDriver driver, String expectedTitle) throws InterruptedException {
 		
 		String target = link.getAttribute("target");
 		
@@ -131,6 +133,14 @@ public class zapGuitars_functions extends setUp {
 					return false;
 				}
 		}
+	}
+	
+	public void closeTab() throws InterruptedException {
+		
+		Thread.sleep(1000);
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(1000);
 	}
 	
 	public boolean visibleIframeTest(boolean clickLink, WebElement link, WebElement iframeDiv, String iframeId) throws InterruptedException {
