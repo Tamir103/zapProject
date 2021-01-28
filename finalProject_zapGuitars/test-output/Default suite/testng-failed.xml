@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="finalProject_zapGuitars.footerTest">
+      <class name="finalProject_zapGuitars.multiChoiceWindow">
         <methods>
-          <include name="beforeClass"/>
-          <include name="adInterfaceLink"/>
-          <include name="tavoLink"/>
+          <include name="numericalOrder"/>
           <include name="afterClass"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- finalProject_zapGuitars.footerTest -->
+      </class> <!-- finalProject_zapGuitars.multiChoiceWindow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

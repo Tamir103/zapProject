@@ -4,8 +4,9 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import tools.setUp;
-import tools.zapElements;
+import tools.zapMainPageID;
 import tools.zapGuitars_POF;
+import tools.zapMainPageID;
 
 import org.testng.annotations.BeforeClass;
 
@@ -23,7 +24,6 @@ public class navigateToGuitars extends setUp {
 	static final String guitarPageTitle = "גיטרות - זאפ";
 	static boolean isPageCorrect;
 	static String searchString;
-	static String testName;
 	
   @Test (groups = "search_box", priority = 1, enabled = true)
   public void searchBox_guitar() throws AWTException, IOException {
@@ -32,7 +32,7 @@ public class navigateToGuitars extends setUp {
 	  searchString = "גיטרה";
 	  
 	  try {
-		isPageCorrect = func.searchBox(elements.mainHeaderSearchBox, elements.mainSearchButton, searchString, guitarPageTitle);
+		isPageCorrect = func.searchBox(mainPageID.mainHeaderSearchBox, mainPageID.mainSearchButton, searchString, guitarPageTitle);
 		
 		func.printToReport(isPageCorrect, testName, false);
 		
@@ -56,7 +56,7 @@ public class navigateToGuitars extends setUp {
 	  searchString = "גיטרות";
 	  
 	  try {
-		isPageCorrect = func.searchBox(elements.mainHeaderSearchBox, elements.mainSearchButton, searchString, guitarPageTitle);
+		isPageCorrect = func.searchBox(mainPageID.mainHeaderSearchBox, mainPageID.mainSearchButton, searchString, guitarPageTitle);
 		
 		func.printToReport(isPageCorrect, testName, false);
 		
@@ -80,14 +80,14 @@ public class navigateToGuitars extends setUp {
 	  testName = "All categories submenus";
 	  
 	  try {
-		  action.moveToElement(elements.allCategories).perform();
+		  action.moveToElement(mainPageID.allCategories).perform();
 		  Thread.sleep(1000);
-		  action.moveToElement(elements.categoriesSubmenuSportNLeisure).perform();
+		  action.moveToElement(mainPageID.categoriesSubmenuSportNLeisure).perform();
 		  Thread.sleep(1000);
-		  action.moveToElement(elements.submenuGuitars).click().build().perform();
+		  action.moveToElement(mainPageID.submenuGuitars).click().build().perform();
 		  Thread.sleep(2000);
 		  
-		  isPageCorrect = func.guitarsPage(guitarPageTitle);
+		  isPageCorrect = func.checkPageTitle(guitarPageTitle);
 		  
 		  func.printToReport(isPageCorrect, testName, false);
 		  
@@ -106,19 +106,19 @@ public class navigateToGuitars extends setUp {
   }
   
   @Test (groups = "menus", priority = 3)
-  public void sportAndLeisure() throws AWTException, IOException {
+  public void mainSportAndLeisure() throws AWTException, IOException {
 	  
 	  testName = "Sports and leisure submenu";
 	  
 	  try {
-		action.moveToElement(elements.mainSportNLeisure).perform();
+		action.moveToElement(mainPageID.mainSportNLeisure).perform();
 		Thread.sleep(1000);
-		action.moveToElement(elements.musicMenu).perform();
+		action.moveToElement(mainPageID.musicMenu).perform();
 		Thread.sleep(1000);
-		action.moveToElement(elements.submenuGuitars).click().build().perform();
+		action.moveToElement(mainPageID.submenuGuitars).click().build().perform();
 		Thread.sleep(2000);
 		  
-		isPageCorrect = func.guitarsPage(guitarPageTitle);
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
 		  
 		func.printToReport(isPageCorrect, testName, false);
 		  
@@ -135,6 +135,91 @@ public class navigateToGuitars extends setUp {
 	}
   }
   
+  @Test (priority = 4)
+  public void sideSportAndLeisure() throws AWTException, IOException {
+	  
+	  testName = "Side menu sport and leisure link";
+	  
+	  try {
+		mainPageID.sideSportNLeisure.click();
+		Thread.sleep(2000);
+		
+		mainPageID.submenuGuitars.click();
+		Thread.sleep(2000);
+		
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
+		  
+		func.printToReport(isPageCorrect, testName, false);
+		  
+		func.returnToMainPage();
+		  
+		Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  
+		  
+	} catch (Exception e) {
+		func.printToReport(isPageCorrect, testName, true);
+		
+		e.printStackTrace();
+		
+		Assert.assertEquals(false, true, "An exception occurred");
+	}
+	  
+  }
+  
+  @Test (priority = 5)
+  public void sideMenuMorebutton() throws AWTException, IOException {
+	  
+ testName = "Side menu sport and leisure more button link";
+	  
+	  try {
+		mainPageID.moreSportNLeisure.click();
+		Thread.sleep(2000);
+		
+		mainPageID.submenuGuitars.click();
+		Thread.sleep(2000);
+		
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
+		  
+		func.printToReport(isPageCorrect, testName, false);
+		  
+		func.returnToMainPage();
+		  
+		Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  		  
+	} catch (Exception e) {
+		func.printToReport(isPageCorrect, testName, true);
+		
+		e.printStackTrace();
+		
+		Assert.assertEquals(false, true, "An exception occurred");
+	}  
+  }
+  
+  @Test (priority = 6)
+  public void allCategoriesPage() throws AWTException, IOException {
+	  
+	  try {
+		  mainPageID.allCategories.click();
+		  Thread.sleep(2000);
+		  
+		  mainPageID.submenuGuitars.click();
+		  Thread.sleep(2000);
+		  
+		  isPageCorrect = func.checkPageTitle(guitarPageTitle);
+		  
+		  func.printToReport(isPageCorrect, testName, false);
+			    
+		  Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  
+	  } catch (Exception e) {
+		  func.printToReport(isPageCorrect, testName, true);
+			
+		  e.printStackTrace();
+			
+		  Assert.assertEquals(false, true, "An exception occurred");
+	}
+  }
+  
   @BeforeClass
   public void beforeClass() {
 	  
@@ -145,12 +230,12 @@ public class navigateToGuitars extends setUp {
 	  
 	  action = new Actions(driver);
 	  
-	//sampling all the elements from elements class, if web page is refreshed all samples needs to be sampled again		
-	  elements = PageFactory.initElements(driver, zapElements.class);
+	//sampling all the elements from zapMainPageID class, if web page is refreshed all samples needs to be sampled again		
+	  mainPageID = PageFactory.initElements(driver, zapMainPageID.class);
 	  pof = PageFactory.initElements(driver, zapGuitars_POF.class);
 	
 	  extent = exm.getExtentReports();
-	  test = exm.createTest("Navigating to guitars page Test", "Navigating to guitars page Test");
+	  test = exm.createTest("Navigating to guitars page test", "Navigating to guitars page test");
   }
 
   @AfterClass

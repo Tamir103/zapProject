@@ -7,7 +7,7 @@ package tools;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class zapElements {
+public class zapMainPageID {
 	
 	/*
 	 Main search box
@@ -36,6 +36,16 @@ public class zapElements {
 	
 	@FindBy (xpath = "//ul[@class='all-cat']/li[4]") //list may change
 	public static WebElement musicMenu;
+	
+	
+	/*
+	 Side Menus
+	 */
+	@FindBy (xpath = "//a[@aria-label='פנאי וספורט']")
+	public static WebElement sideSportNLeisure;
+	
+	@FindBy (xpath = "//a[@aria-label='מוצרים נוספים בתחום פנאי וספורט']")
+	public static WebElement moreSportNLeisure;
 	
 	/*
 	 Footer links

@@ -20,14 +20,15 @@ import java.nio.file.Paths;
 
 import java.util.Optional;
 
-import javax.naming.spi.DirStateFactory.Result;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
+
 
 public class zapGuitars_functions extends setUp {
 	
@@ -192,23 +193,108 @@ public class zapGuitars_functions extends setUp {
 		
 	}
 	
-	public boolean guitarsPage(String guitarsPageTiltle) {
+	public boolean checkPageTitle(String expectedPageTitle) {
 		
 		String currentPageTitle = driver.getTitle();
 		currentPageTitle.trim();
+		System.out.println(currentPageTitle);
 		
-		boolean result = (currentPageTitle.equals(guitarsPageTiltle)) ? true : false;
+		
+		boolean result = (currentPageTitle.contains(expectedPageTitle)) ? true : false;
 		return result;
 		
 	}
 	
+	public boolean compareStringOrInt(String currentString, String expectedString, int currentCount, int expectedCount) {
+		/*
+		 Using one method for comparing strings or ints
+		  */
+				
+		if (currentString == null) {
+			boolean result = (currentCount == expectedCount) ? true : false;
+			return result;
+		} else {
+			boolean result = (currentString.contains(expectedString)) ? true : false;
+			return result;
+		}
+			
+	}
 	
-	public static boolean isListInAlphabeticalOrder(List<String> listToCheck, int expectedCharsNum) {
+	public List<String> getResultsStringList(List<WebElement> elementsList) {
+		
+		List<String> resultsList = new ArrayList<String>();
+		String forBtnAtt;
+		do {
+			try {
+				forBtnAtt = pof.forwardButton.getAttribute("class"); 
+			
+			} catch (NoSuchElementException e) {
+				forBtnAtt = "Disabled";
+			}
+				for (int i = 0; i < elementsList.size(); i++) {
+					resultsList.add(elementsList.get(i).getText());
+				}
+				try {
+				pof.forwardButton.click();
+				} catch (NoSuchElementException e) {
+				}
+		} while(!forBtnAtt.contains("Disabled"));
+		
+		return resultsList;
+	}
+	
+	public boolean isListCorrect(List<String> list, String expected) {
+		
+		List<Boolean> booleanList = new ArrayList<Boolean>();
+		expected.toLowerCase();
+		
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).contains(expected)) {
+				booleanList.add(true);
+			} else {
+				booleanList.add(false);
+			}
+		}
+		
+		for (Boolean b : booleanList) {
+			if (b.equals(false)) {
+				break;
+			} else {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isMultiWindowOpen() {
+		
+		String visibleOrNot = pof.multiChoiceWindow.getAttribute("style");
+		
+		if (visibleOrNot.contains("visible")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isMultiChoice() {
+		
+		String multiOrNot = pof.checkboxDisplay.getAttribute("style");
+		
+		if (multiOrNot.contains("none")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public int listAlphabeticalOrderCount(List<String> listToCheck) {
 		
 		/*
-		looping throw the list to check that it is in alphabetic order, 
+		looping through the list to check that it is in alphabetic order, 
 		using ASC2 character numbers (97 = lower case a, 122 = lower case z).
-		if counter equals the expected characters number, then the list is in alphabetical order.
+		if counter equals the expected characters number (number of different letters in list), then the list is in alphabetical order.
+		In this project comparison is conducted in a different method.
 		*/
 			int counter = 1;
 			int charASC2 = 97;
@@ -226,11 +312,9 @@ public class zapGuitars_functions extends setUp {
 					}
 				}
 			}
-			
-			boolean result = (counter == expectedCharsNum) ? true : false;
-			return result;
-			
-				
+			return counter;
+//			boolean result = (counter == expectedCharsSum) ? true : false;
+//			return result;			
 	}
 	
 	public static boolean isListInNumericalOrder(List<Integer> numList, int expectedCount) {
@@ -238,15 +322,19 @@ public class zapGuitars_functions extends setUp {
 		int firstInt, secondInt, counter = 0;	
 			firstLoop:
 				for (int i = 0; i < numList.size(); i++) {
-					firstInt = numList.get(i);					// loop for getting a int value item from the list
+					firstInt = numList.get(i);					// loop for getting item int value from the list
 					
 						for (int j = i+1; j <= i+1; j++) {
-							secondInt = numList.get(j);			// loop that runs one time, getting the next int value item from the list
-				
+							if (j == numList.size()) {
+								counter++;
+								break firstLoop;
+							} else {
+							secondInt = numList.get(j);			// loop that runs one time, getting the next item int value from the list
+							}
+							
 							if (firstInt >= secondInt) {		
 								counter++;
 							} else {
-								System.out.println("Not in the right order");
 								break firstLoop;
 							}
 						}
