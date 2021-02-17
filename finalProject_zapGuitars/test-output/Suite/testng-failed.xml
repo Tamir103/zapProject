@@ -11,6 +11,13 @@
           <include name="afterClass"/>
         </methods>
       </class> <!-- finalProject_zapGuitars.footerTest -->
+      <class name="finalProject_zapGuitars.multiChoiceWindow">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="checkingBoxes"/>
+        </methods>
+      </class> <!-- finalProject_zapGuitars.multiChoiceWindow -->
     </classes>
   </test> <!-- zapTests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

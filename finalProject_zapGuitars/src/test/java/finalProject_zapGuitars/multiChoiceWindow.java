@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -31,17 +32,23 @@ public class multiChoiceWindow extends setUp {
 	static String filters;
 	static int currentListCount;
 	static int expectedListCount;
+	static boolean isFilterOn;
+	static List<String> resultsStringList;
+	static boolean isListCorrectThreeItems;
 	
-  @Test (priority = 1)
+	
+  @Test (priority = 1, enabled = true)
   public void openMultiChoiceWindow() throws AWTException, IOException {
 	  
 	  testName = "Opening multiple choice manufacturer window";
 	  
-	  try {
-	  pof.multiSelectManufacturerButton.click(); 			//opening multiple choice window by manufacturer 
-	  Thread.sleep(2000);
-	  
-	  isConditionTrue = func.isMultiWindowOpen();			// checking if multiple choice window is open
+	 try {	  
+		 isConditionTrue = func.isMultiWindowOpen();  			// checking if multiple choice window is open
+			if (!isConditionTrue) {
+				func.openMultiWindow();
+				Thread.sleep(1000);
+				isConditionTrue = func.isMultiWindowOpen();
+			}			
 	  
 	  if (isConditionTrue) {
 			func.printToReport(true, testName, false);				
@@ -51,23 +58,26 @@ public class multiChoiceWindow extends setUp {
 			Assert.assertEquals(true, false, "Not multiple choice");
 		}		
 	  
-	  } catch (Exception e) {
+	 } catch (Exception e) {
 		  func.printToReport(isConditionTrue, testName, true);
 		  e.printStackTrace();
 		  Assert.assertEquals(false, true, "An exception occured");
 	}
   }
   
-  @Test (priority = 2)
+  @Test (priority = 2, enabled = true)
   public void chooseOneFilter() throws AWTException, IOException {
 	  
 	  testName = "Single choice in multiple choice window";
 	  
 	  try {
-		pof.oneChoiceButtton.click();
-		Thread.sleep(1000);
+		func.clickOnElement(pof.oneChoiceButtton);
 		
-		isConditionTrue = func.isMultiChoice();
+		isConditionTrue = func.isMultiWindowOpen();
+			if (!isConditionTrue) {
+				func.openMultiWindow();
+				Thread.sleep(1000);
+			}
 		
 		if (isConditionTrue) {
 			func.printToReport(true, testName, false);				
@@ -83,12 +93,11 @@ public class multiChoiceWindow extends setUp {
 		  Assert.assertEquals(false, true, "An exception occured");
 	  }
   }
-  @Test (priority = 3, dependsOnMethods = "chooseOneFilter")
+  @Test (priority = 3, dependsOnMethods = "chooseOneFilter", enabled = true)
   public void oneFilterOnly() {
 	  
 	  try {
-		pof.yamahaSingleChoice.click();
-		Thread.sleep(2000);
+		func.clickOnElement(pof.yamahaSingleChoice);
 		
 		elements.yamahaFilterTest();        // method that is used in more than one test class, also prints to report
 		
@@ -97,26 +106,24 @@ public class multiChoiceWindow extends setUp {
 	  }
   }
   
-  @Test (priority = 4)
+  @Test (priority = 4, enabled = true)
   public void alphabeticalOrder() throws AWTException, IOException {
 	  
 	  testName = "Alphabetical order test";
 	  
-	  try {
-		  
+	  try {  
 		  filters = pof.filterButtonsBanner.getText();  							
 		  if (filters != null) {
-			 pof.closeFilter_1.click(); 			// closing filter if one exist
+			func.clickOnElement(pof.closeFilter_1); 					// closing filter if one exist
 		  }
 		  
-		  try {
-			pof.multiSelectManufacturerButton.click();		// opening multiple choice by manufacturer window, if not already open
-			Thread.sleep(1000);
-		  } catch (NoSuchElementException e) {
-		  }
-		  
-		 pof.alphabetButton.click();						// sorting manufacturers list by alphabetical order
-		 Thread.sleep(1000);		
+		isConditionTrue = func.isMultiWindowOpen();			// opening multi choice manufacturer window, if not already open
+			if (!isConditionTrue) {
+				func.openMultiWindow();
+				Thread.sleep(2000);
+			}
+		 
+		func.clickOnElement(pof.alphabetButton);			// sorting manufacturers list by alphabetical order		
 			
 		 	for (WebElement w : pof.multiChoiceItemsList) { // converting list from web elements to strings
 		 		multiChoiceItemsList.add(w.getText());
@@ -147,35 +154,78 @@ public class multiChoiceWindow extends setUp {
 	  
   }
   
-  @Test (priority = 5)
+  @Test (priority = 5, enabled = true)
   public void numericalOrder() throws AWTException, IOException {
 	  
 	  testName = "Quantities numerical order test";
 	  
 	  try {
-		  try {
-			pof.multiSelectManufacturerButton.click();		// opening multiple choice by manufacturer window, if not already open
-			Thread.sleep(1000);
-		  } catch (NoSuchElementException e) {
-		  } catch (ElementClickInterceptedException e) {
-		  }
-		  
-		pof.quantityButton.click();
-		Thread.sleep(1000);
+		  isConditionTrue = func.isMultiWindowOpen();
+			if (!isConditionTrue) {
+				func.openMultiWindow();
+				Thread.sleep(2000);
+			}
+		 func.clickOnElement(pof.quantityButton);
 		
-		for (WebElement w : pof.multiChoiceItemsQuantityList) { 			// converting list from web elements to int
-	 		String s = w.getText().replace("(", "").replace(")", "");
-	 		int a = Integer.parseInt(s);
-			multiChoiceQuantityList.add(a);
-	 	}
+			for (WebElement w : pof.multiChoiceItemsQuantityList) { 			// converting list from web elements to int
+		 		String s = w.getText().replace("(", "").replace(")", "");
+		 		int a = Integer.parseInt(s);
+				multiChoiceQuantityList.add(a);
+		 	}
 		
 		isConditionTrue = func.isListInNumericalOrder(multiChoiceQuantityList, multiChoiceQuantityList.size());
 		
-		func.printToReport(isConditionTrue, testName, false);
-		
+		func.printToReport(isConditionTrue, testName, false);	
 		Assert.assertEquals(isConditionTrue, true, "Not in numerical order");
+		
 	} catch (Exception e) {
 		func.printToReport(isConditionTrue, testName, true);
+		e.printStackTrace();
+		Assert.assertEquals(false, true, "An exception occured");
+	}
+  }
+  
+  @Test (priority = 6)
+  public void checkingBoxes() throws AWTException, IOException {
+	  
+	  testName = "Checkboxes results test";
+	  String expected1 = "Yamaha", expected2 = "Fender", expected3 = "Takamine";
+	  
+	  try {
+		  isConditionTrue = func.isMultiWindowOpen();
+			if (!isConditionTrue) {
+				func.openMultiWindow();
+				Thread.sleep(1000);
+			}
+		
+				
+		func.checkTheBox(true, pof.yamahaCheckbox);
+		func.checkTheBox(true, pof.fenderCheckbox);
+		func.checkTheBox(true, pof.takamineCheckbox);
+		
+		func.clickOnElement(pof.filterButton);
+		
+		int numOfResults = func.getNumOfSearchResultsInt();  
+		filters = pof.filterButtonsBanner.getText();  							
+		
+		if (filters != null) {																					
+			resultsStringList = func.getResultsStringList(pof.numOfResultsList);	
+			isListCorrectThreeItems = func.isListCorrectThreeItems(resultsStringList, expected1, expected2, expected3);	
+		
+				if (isListCorrectThreeItems && numOfResults == resultsStringList.size()) {									
+					func.printToReport(true, testName, false);				
+					Assert.assertEquals(isListCorrectThreeItems, true, "Wrong filter");		
+				} else {
+					func.printToReport(false, testName, false);
+					Assert.assertEquals(true, false, "Filter or List are incorrect");
+				}					
+		} else {
+			func.printToReport(false, testName, false);
+			Assert.assertEquals(true, false, "Null filter");
+		}
+		
+	} catch (Exception e) {
+		func.printToReport(isListCorrectThreeItems, testName, true);
 		e.printStackTrace();
 		Assert.assertEquals(false, true, "An exception occured");
 	}

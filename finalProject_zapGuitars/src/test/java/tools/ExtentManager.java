@@ -24,7 +24,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentManager {
+public class ExtentManager extends setUp {
 
 	public static WebDriver driver;
 	
@@ -71,29 +71,13 @@ public class ExtentManager {
 		return sparkReporter;
 	}
 	
-//screenshot option 1
-//	public static String CaptureScreen(WebDriver driver) throws AWTException, IOException {
-//		LocalDateTime now = LocalDateTime.now();
-//		String time = now.format(DateTimeFormatter.ofPattern("ddHHmmss"));
-//		String folderPath = ("D:\\Automation\\Selenium\\ExtentReports\\" + reportDate);
-//		String imagePath = folderPath + "/pic" + time + ".jpg";
-//		TakesScreenshot oScn = (TakesScreenshot) driver;
-//		File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
-//		File oDest = new File(imagePath);
-//		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//		Files.copy(scrFile, oDest);
-//		
-//		return imagePath;
-//	}
-	
-//screenshot option 2
 	public static String CaptureScreen() throws AWTException, IOException {
 		LocalDateTime now = LocalDateTime.now();
 		String time = now.format(DateTimeFormatter.ofPattern("ddHHmmss"));
 		String folderPath = ("D:\\Automation\\Final project\\" + reportDate);
 		String imagePath = folderPath + "/pic" + time + ".png";
 		
-		Robot robot = new Robot();
+		robot = new Robot();
 		BufferedImage screenShot = robot.createScreenCapture(new Rectangle(java.awt.Toolkit.getDefaultToolkit().getScreenSize()));
 		ImageIO.write(screenShot, "JPG", new File(imagePath));
 		

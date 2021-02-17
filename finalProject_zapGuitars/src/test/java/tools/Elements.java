@@ -3,6 +3,7 @@ package tools;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
@@ -24,20 +25,17 @@ public class Elements extends setUp {
 	
 	try {
 		try {
-		pof.yamahaFilterButton.click();
-		Thread.sleep(1000);
+			func.clickOnElement(pof.yamahaFilterButton);
 		} catch (NoSuchElementException e) {
 		}
-		resultsAmount = pof.numOfResults.getText();
-		numOfResults = Integer.parseInt(resultsAmount);								// getting the number of results and converting it to int
+		
+		numOfResults = func.getNumOfSearchResultsInt();								// getting the number of results and converting it to int
 		filters = pof.filterButtonsBanner.getText();  								// getting filter text
 		
 		if (filters != null) {														// if filter exist
-			isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);			// is filter contains correct filtering string, 0 because not comparing ints
-			
+			isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);			// is filter contains correct filtering string, 0 because not comparing ints			
 			resultsStringList = func.getResultsStringList(pof.numOfResultsList);	// getting filtered results list as strings
-			
-			isListCorrect = func.isListCorrect(resultsStringList, expected);						// checking if all results containing key string
+			isListCorrect = func.isListCorrectOneItem(resultsStringList, expected);						// checking if all results containing key string
 			
 			if (isFilterOn && isListCorrect && numOfResults == resultsStringList.size()) {			// test pass if filter and list are correct, and amount of results match list size
 				func.printToReport(true, testName, false);				

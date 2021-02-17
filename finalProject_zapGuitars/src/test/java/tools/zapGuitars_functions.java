@@ -1,16 +1,16 @@
 package tools;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.awt.AWTException;
+import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
@@ -19,10 +19,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
+import javax.lang.model.element.Element;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +36,8 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 public class zapGuitars_functions extends setUp {
 	
 	static ArrayList<String> tabs;
+	static List<String> falseStrings = new ArrayList<String>();
+	static ArrayList<Boolean> booleanList = new ArrayList<Boolean>();
 	
 	public static void convertFileEncoding(String sourcePath, Optional<String> targetPath, Optional<String> targetEncoding) throws IOException, InterruptedException{
 	    
@@ -105,8 +110,7 @@ public class zapGuitars_functions extends setUp {
 		String target = link.getAttribute("target");
 		
 		if (target.equalsIgnoreCase("_blank")) {
-			link.click();
-			Thread.sleep(2000);
+			clickOnElement(link);
 			
 //			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -122,8 +126,7 @@ public class zapGuitars_functions extends setUp {
 				}
 			
 		} else {
-			link.click();
-			Thread.sleep(2000);
+			clickOnElement(link);
 			
 			String webPageTitle = driver.getTitle();
 			webPageTitle.trim();
@@ -149,8 +152,7 @@ public class zapGuitars_functions extends setUp {
 		String displayValue = "";
 		
 		if (clickLink) {
-			link.click();
-			Thread.sleep(2000);	
+			clickOnElement(link);
 		}	
 
 		displayValue = iframeDiv.getAttribute("style");
@@ -165,44 +167,47 @@ public class zapGuitars_functions extends setUp {
 			
 	}
 
-	public static void closeIframe(WebElement iframeCloseButton) throws InterruptedException {
-		
-		iframeCloseButton.click();
-		Thread.sleep(1000);
+	public void closeIframe(WebElement iframeCloseButton) throws InterruptedException {
+		clickOnElement(iframeCloseButton);
 		driver.switchTo().defaultContent();
 	}
 	
 	
-	public boolean searchBox(WebElement searchBox, WebElement searchButton, String searchString, String expectedTitle) throws InterruptedException {
-		
-		searchBox.click();
-		Thread.sleep(500);
+	public void searchBoxInput(WebElement searchBox, String searchString) throws InterruptedException {
+	
+		clickOnElement(searchBox);
 
-		action.moveToElement(searchBox).sendKeys(searchString).build().perform();
-		
-		Thread.sleep(1000);
-		
-		searchButton.click();
-		Thread.sleep(2000);
-		
-		String pageTitle = driver.getTitle();
-		pageTitle.trim();
-		
-		boolean result = (pageTitle.equals(expectedTitle)) ? true : false;
-		return result;
-		
+		action.moveToElement(searchBox).sendKeys(searchString).build().perform();	
 	}
 	
-	public boolean checkPageTitle(String expectedPageTitle) {
+	public void clickOnElement(WebElement button) throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		button.click();
+		Thread.sleep(3000);
+	}
+	
+	public void pressEnter(/*Robot robot*/ WebElement element) {
+		action.sendKeys(Keys.RETURN).build().perform();
 		
+//		robot.keyPress(KeyEvent.VK_ENTER);
+//		robot.keyRelease(KeyEvent.VK_ENTER);
+//		robot.delay(1000);	
+	}
+	
+	public boolean checkPageTitle(String expectedPageTitle) {		
 		String currentPageTitle = driver.getTitle();
 		currentPageTitle.trim();
-		System.out.println(currentPageTitle);
-		
 		
 		boolean result = (currentPageTitle.contains(expectedPageTitle)) ? true : false;
-		return result;
+		return result;		
+	}
+	
+	public boolean checkPageURL(String expectedURL) {
+		String currentPageURL = driver.getCurrentUrl();
+		currentPageURL.trim();
 		
+		boolean result = (currentPageURL.contains(expectedURL)) ? true : false;
+		return result;		
 	}
 	
 	public boolean compareStringOrInt(String currentString, String expectedString, int currentCount, int expectedCount) {
@@ -220,7 +225,38 @@ public class zapGuitars_functions extends setUp {
 			
 	}
 	
-	public List<String> getResultsStringList(List<WebElement> elementsList) {
+	public List<String> isPriceUnder2000(List<String> pricesList) {
+		
+		List<String> under2000List = new ArrayList<String>();
+		String result;
+		
+		for (String str : pricesList) {										// converting strings to ints
+			String s = str.trim().replace(",", "");					
+			String[] stringPrices = s.split(" ");
+			int price = Integer.parseInt(stringPrices[0]); 
+				
+				if (price < 2000) {											// Validating that price is lower than 2000
+					result = "true";
+					under2000List.add(result);
+				} else {
+					result = "false";
+					under2000List.add(result);
+				}
+			}
+		return under2000List;
+	}
+	
+	public int getNumOfSearchResultsInt() {
+		int numOfResults;
+		String resultsAmount;
+		
+		resultsAmount = pof.numOfResults.getText();
+		numOfResults = Integer.parseInt(resultsAmount);
+		
+		return numOfResults;
+	}
+	
+	public List<String> getResultsStringList(List<WebElement> elementsList) throws InterruptedException {
 		
 		List<String> resultsList = new ArrayList<String>();
 		String forBtnAtt;
@@ -234,58 +270,90 @@ public class zapGuitars_functions extends setUp {
 				for (int i = 0; i < elementsList.size(); i++) {
 					resultsList.add(elementsList.get(i).getText());
 				}
-				try {
-				pof.forwardButton.click();
-				} catch (NoSuchElementException e) {
-				}
+			try {
+				clickOnElement(pof.forwardButton);
+			} catch (NoSuchElementException e) {
+			}
 		} while(!forBtnAtt.contains("Disabled"));
 		
 		return resultsList;
 	}
 	
-	public boolean isListCorrect(List<String> list, String expected) {
+	public boolean isListCorrectOneItem(List<String> list, String expected) {
 		
-		List<Boolean> booleanList = new ArrayList<Boolean>();
-		expected.toLowerCase();
+		boolean result = true;
 		
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).contains(expected)) {
+			if (StringUtils.containsIgnoreCase(list.get(i), expected)) {
 				booleanList.add(true);
 			} else {
 				booleanList.add(false);
 			}
 		}
 		
-		for (Boolean b : booleanList) {
-			if (b.equals(false)) {
-				break;
-			} else {
-				return true;
-			}
+		for (int j = 0; j < booleanList.size(); j++) {
+			if (!booleanList.get(j)) {
+				falseStrings.add(list.get(j));
+			} 
 		}
-		return false;
+		booleanList.clear();
+		
+		if (!falseStrings.isEmpty()) {			// falseStrings list could be used later to analyze which list items are wrong
+			result = false;
+		}
+		return result;
 	}
 	
-	public boolean isMultiWindowOpen() {
+	public boolean isListCorrectThreeItems(List<String> list, String expected1, String expected2, String expected3) {
+		
+		boolean result = true;
+		
+		for (int i = 0; i < list.size(); i++) {
+			if (StringUtils.containsIgnoreCase(list.get(i), expected1) || 
+					StringUtils.containsIgnoreCase(list.get(i), expected2) ||
+					StringUtils.containsIgnoreCase(list.get(i), expected3)) {
+				booleanList.add(true);
+			} else {
+				booleanList.add(false);
+			}
+		}
+		
+		for (int j = 0; j < booleanList.size(); j++) {
+			if (!booleanList.get(j)) {
+				falseStrings.add(list.get(j));
+			} 
+		}
+		booleanList.clear();
+		
+		if (falseStrings != null) {			// falseStrings list could be used later to analyze which list items are wrong
+			result = false;
+		} 
+		return result;
+	}
+	
+	public boolean isMultiWindowOpen() throws InterruptedException  {
 		
 		String visibleOrNot = pof.multiChoiceWindow.getAttribute("style");
 		
 		if (visibleOrNot.contains("visible")) {
+			Thread.sleep(1000);
 			return true;
 		} else {
+			Thread.sleep(1000);
 			return false;
 		}
 	}
 	
-	public boolean isMultiChoice() {
+	public void openMultiWindow() throws InterruptedException {
 		
-		String multiOrNot = pof.checkboxDisplay.getAttribute("style");
-		
-		if (multiOrNot.contains("none")) {
-			return true;
-		} else {
-			return false;
-		}
+		try {
+			clickOnElement(pof.multiSelectManufacturerButton);		// opening multiple choice by manufacturer window, if not already open
+//			return isMultiWindowOpen();
+		} catch (NoSuchElementException e) {
+//			return true;
+		} catch (ElementClickInterceptedException e) {
+//			return true;
+		} 
 	}
 	
 	public int listAlphabeticalOrderCount(List<String> listToCheck) {
@@ -342,5 +410,18 @@ public class zapGuitars_functions extends setUp {
 		
 		boolean result = (counter == expectedCount) ? true : false;
 		return result;
+	}
+	
+	public void checkTheBox(boolean check, WebElement checkboxElement) throws InterruptedException {
+		
+		if (check) {
+			if (!checkboxElement.isSelected()) {
+				clickOnElement(checkboxElement);
+			}
+		} else {
+			if (checkboxElement.isSelected()) {
+				clickOnElement(checkboxElement);
+			}
+		}
 	}
 }

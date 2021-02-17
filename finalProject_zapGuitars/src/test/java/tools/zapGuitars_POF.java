@@ -77,6 +77,10 @@ public class zapGuitars_POF {
 	@FindBy (xpath = "//div[@class='pricesRow']//span")
 	public static List<WebElement> singlePrice;
 
+// First result after filtering is in a price range	
+	@FindBy (xpath = "//div[@class='Prices ']/div[@class='pricesRow']")
+	public static WebElement firstPriceRange;
+	
 	/*
 	multiple selection window
 	*/
@@ -108,9 +112,9 @@ public class zapGuitars_POF {
 	@FindBy (xpath = "//a[@aria-label='בחר יצרן Yamaha ']/div[@class='txtLtr']")
 	public static WebElement yamahaSingleChoice;
 	
-// checkbox for Ibanez in multiple selection window
-	@FindBy (xpath = "//input[contains(@aria-label, 'Ibanez') and @type='checkbox']")
-	public static WebElement ibanezCheckbox;
+// checkbox for Yamaha in multiple selection window
+	@FindBy (xpath = "//input[contains(@aria-label, 'Yamaha')]")
+	public static WebElement yamahaCheckbox;
 	
 // checkbox for Fender in multiple selection window
 	@FindBy (xpath = "//input[@aria-label='Fender יצרן ']")
@@ -133,7 +137,7 @@ public class zapGuitars_POF {
 	public static WebElement quantityButton;
 	
 // multiple selection window search box
-	@FindBy (id = "filterClientSearch")
+	@FindBy (xpath = "//input[contains(@aria-label, 'מאפיין')]")
 	public static WebElement multiSearchbox;
 	
 

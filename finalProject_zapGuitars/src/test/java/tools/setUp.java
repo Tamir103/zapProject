@@ -1,5 +1,7 @@
 package tools;
 
+import java.awt.Robot;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -14,10 +16,12 @@ public class setUp {
 	public static zapGuitars_POF pof = new zapGuitars_POF();
 	public static zapMainPageID mainPageID = new zapMainPageID();
 	public static Actions action;
+	public static Robot robot;
 	
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	public static ExtentManager exm = new ExtentManager(driver);
 	
 	public static String testName;
+	public static String expected;
 }

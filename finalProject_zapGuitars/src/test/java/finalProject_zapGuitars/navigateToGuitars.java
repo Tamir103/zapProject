@@ -11,8 +11,11 @@ import tools.zapMainPageID;
 import org.testng.annotations.BeforeClass;
 
 import java.awt.AWTException;
+import java.awt.Robot;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -26,13 +29,15 @@ public class navigateToGuitars extends setUp {
 	static String searchString;
 	
   @Test (groups = "search_box", priority = 1, enabled = true)
-  public void searchBox_guitar() throws AWTException, IOException {
+  public void searchBox_guitar_searchbutton() throws AWTException, IOException {
 	  
-	  testName = "Guitar search test";
+	  testName = "Guitar search test using search button";
 	  searchString = "גיטרה";
 	  
 	  try {
-		isPageCorrect = func.searchBox(mainPageID.mainHeaderSearchBox, mainPageID.mainSearchButton, searchString, guitarPageTitle);
+		func.searchBoxInput(mainPageID.mainHeaderSearchBox, searchString);
+		func.clickOnElement(mainPageID.mainSearchButton);
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
 		
 		func.printToReport(isPageCorrect, testName, false);
 		
@@ -41,8 +46,7 @@ public class navigateToGuitars extends setUp {
 		Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  
 	} catch (Exception e) {
-		func.printToReport(isPageCorrect, testName, true);
-		
+		func.printToReport(isPageCorrect, testName, true);	
 		e.printStackTrace();
 		Assert.assertEquals(false, true, "An exception occurred");
 		
@@ -50,13 +54,16 @@ public class navigateToGuitars extends setUp {
   }
   
   @Test (groups = "search box", priority = 2, enabled = true)
-  public void searchBox_guitars() throws AWTException, IOException {
+  public void searchBox_guitar_enter() throws AWTException, IOException {
 	  
-	  testName = "Guitars search test";
-	  searchString = "גיטרות";
+	  testName = "Guitar search test using enter button";
+	  searchString = "גיטרה";
 	  
 	  try {
-		isPageCorrect = func.searchBox(mainPageID.mainHeaderSearchBox, mainPageID.mainSearchButton, searchString, guitarPageTitle);
+		func.searchBoxInput(mainPageID.mainHeaderSearchBox, searchString);
+		func.pressEnter(mainPageID.mainHeaderSearchBox);
+		Thread.sleep(2000);
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
 		
 		func.printToReport(isPageCorrect, testName, false);
 		
@@ -65,16 +72,62 @@ public class navigateToGuitars extends setUp {
 		Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  
 	} catch (Exception e) {
-		func.printToReport(isPageCorrect, testName, true);
-		
+		func.printToReport(isPageCorrect, testName, true);	
 		e.printStackTrace();
+		Assert.assertEquals(false, true, "An exception occurred");
 		
-		Assert.assertEquals(false, true, "An exception occurred");	
 	}
-	  
   }
   
-  @Test (groups = "menus", priority = 3)
+  @Test (groups = "search box", priority = 3, enabled = true)
+  public void searchBox_guitars_searchbutton() throws AWTException, IOException {
+	  
+	  testName = "Guitars search test using search button";
+	  searchString = "גיטרות";
+	  
+	  try {
+		func.searchBoxInput(mainPageID.mainHeaderSearchBox, searchString);
+		func.clickOnElement(mainPageID.mainSearchButton);
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
+		
+		func.printToReport(isPageCorrect, testName, false);
+		
+		func.returnToMainPage();;
+		
+		Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  
+	} catch (Exception e) {
+		func.printToReport(isPageCorrect, testName, true);		
+		e.printStackTrace();		
+		Assert.assertEquals(false, true, "An exception occurred");	
+	}	  
+  }
+  
+  @Test (groups = "search box", priority = 4, enabled = true)
+  public void searchBox_guitars_enter() throws AWTException, IOException {
+	  testName = "Guitars search test using search button";
+	  searchString = "גיטרות";
+	  
+	  try {
+		func.searchBoxInput(mainPageID.mainHeaderSearchBox, searchString);
+		func.pressEnter(mainPageID.mainHeaderSearchBox);
+		Thread.sleep(2000);
+		isPageCorrect = func.checkPageTitle(guitarPageTitle);
+		
+		func.printToReport(isPageCorrect, testName, false);
+		
+		func.returnToMainPage();;
+		
+		Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  
+	} catch (Exception e) {
+		func.printToReport(isPageCorrect, testName, true);		
+		e.printStackTrace();		
+		Assert.assertEquals(false, true, "An exception occurred");	
+	}	    
+  }
+  
+  @Test (groups = "menus", priority = 5)
   public void allCategories() throws AWTException, IOException {
 	  
 	  testName = "All categories submenus";
@@ -105,7 +158,7 @@ public class navigateToGuitars extends setUp {
 	}
   }
   
-  @Test (groups = "menus", priority = 3)
+  @Test (groups = "menus", priority = 6)
   public void mainSportAndLeisure() throws AWTException, IOException {
 	  
 	  testName = "Sports and leisure submenu";
@@ -135,7 +188,7 @@ public class navigateToGuitars extends setUp {
 	}
   }
   
-  @Test (priority = 4)
+  @Test (priority = 7)
   public void sideSportAndLeisure() throws AWTException, IOException {
 	  
 	  testName = "Side menu sport and leisure link";
@@ -157,16 +210,14 @@ public class navigateToGuitars extends setUp {
 		  
 		  
 	} catch (Exception e) {
-		func.printToReport(isPageCorrect, testName, true);
-		
-		e.printStackTrace();
-		
+		func.printToReport(isPageCorrect, testName, true);	
+		e.printStackTrace();		
 		Assert.assertEquals(false, true, "An exception occurred");
 	}
 	  
   }
   
-  @Test (priority = 5)
+  @Test (priority = 8)
   public void sideMenuMorebutton() throws AWTException, IOException {
 	  
  testName = "Side menu sport and leisure more button link";
@@ -187,15 +238,13 @@ public class navigateToGuitars extends setUp {
 		Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  		  
 	} catch (Exception e) {
-		func.printToReport(isPageCorrect, testName, true);
-		
+		func.printToReport(isPageCorrect, testName, true);	
 		e.printStackTrace();
-		
 		Assert.assertEquals(false, true, "An exception occurred");
 	}  
   }
   
-  @Test (priority = 6)
+  @Test (priority = 9)
   public void allCategoriesPage() throws AWTException, IOException {
 	  
 	  try {
@@ -212,16 +261,14 @@ public class navigateToGuitars extends setUp {
 		  Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  
 	  } catch (Exception e) {
-		  func.printToReport(isPageCorrect, testName, true);
-			
-		  e.printStackTrace();
-			
+		  func.printToReport(isPageCorrect, testName, true);			
+		  e.printStackTrace();			
 		  Assert.assertEquals(false, true, "An exception occurred");
 	}
   }
   
   @BeforeClass
-  public void beforeClass() {
+  public void beforeClass() throws AWTException {
 	  
 	  WebDriverManager.chromedriver().setup();
 	  driver = new ChromeDriver();
@@ -229,6 +276,7 @@ public class navigateToGuitars extends setUp {
 	  driver.manage().window().maximize();
 	  
 	  action = new Actions(driver);
+	  robot = new Robot();
 	  
 	//sampling all the elements from zapMainPageID class, if web page is refreshed all samples needs to be sampled again		
 	  mainPageID = PageFactory.initElements(driver, zapMainPageID.class);

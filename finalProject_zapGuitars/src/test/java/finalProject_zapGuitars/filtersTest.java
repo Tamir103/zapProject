@@ -29,9 +29,7 @@ import org.testng.annotations.AfterClass;
 public class filtersTest extends setUp {
   
 	static boolean isFilterOn;
-	static String expected;
 	static String filters;
-	static String resultsAmount;
 	static int numOfResults;
 	static List<String> resultsStringList;
 	static boolean isListCorrect;
@@ -50,31 +48,26 @@ public class filtersTest extends setUp {
 		
 		try {
 			try {												// try/catch for second test (removingOneFilter)
-				pof.classicFilterButton.click();
-				Thread.sleep(1000);
+				func.clickOnElement(pof.classicFilterButton);
 			} catch (NoSuchElementException e) {
 				testName = "Removing one filter: <2000";
 			}
 					
-			resultsAmount = pof.numOfResults.getText();
-			numOfResults = Integer.parseInt(resultsAmount);
+			numOfResults = func.getNumOfSearchResultsInt();
 			filters = pof.filterButtonsBanner.getText();  							
 			
 			if (filters != null) {													
-				isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);				
-				
+				isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);								
 				resultsStringList = func.getResultsStringList(pof.numOfResultsList);	
-
-				isListCorrect = func.isListCorrect(resultsStringList, expected);	
+				isListCorrect = func.isListCorrectOneItem(resultsStringList, expected);	
 				
-				if (isFilterOn && isListCorrect && numOfResults == resultsStringList.size()) {									
-					func.printToReport(true, testName, false);				
-					Assert.assertEquals(isFilterOn, true, "Wrong filter");			
-				} else {
-					func.printToReport(false, testName, false);
-					Assert.assertEquals(true, false, "Filter or List are incorrect");
-				}				
-				
+					if (isFilterOn && isListCorrect && numOfResults == resultsStringList.size()) {									
+						func.printToReport(true, testName, false);				
+						Assert.assertEquals(isFilterOn, true, "Wrong filter");			
+					} else {
+						func.printToReport(false, testName, false);
+						Assert.assertEquals(true, false, "Filter or List are incorrect");
+					}					
 			} else {
 				func.printToReport(false, testName, false);
 				Assert.assertEquals(true, false, "Null filter");
@@ -94,46 +87,29 @@ public class filtersTest extends setUp {
 	  
 	  testName = "Price filter";
 	  expected = "2,000";
-	  String result;
 	  List<String> pricesList = new ArrayList<String>();
 	  
 		try {
-			pof.under2000Filter.click();
-			Thread.sleep(1000);
+			func.clickOnElement(pof.under2000Filter);
 			
-			resultsAmount = pof.numOfResults.getText();
-			numOfResults = Integer.parseInt(resultsAmount);
+			numOfResults = func.getNumOfSearchResultsInt();
 			filters = pof.filterButtonsBanner.getText();  							
 			
 			if (filters != null) {													
-				isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);				
-				
+				isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);								
 				pricesList = func.getResultsStringList(pof.singlePrice);			// set new list of prices as strings
-
-				for (String str : pricesList) {										// converting strings to ints
-					String s = str.trim().replace(",", "");					
-					String[] stringPrices = s.split(" ");
-					int price = Integer.parseInt(stringPrices[0]);
-						
-						if (price < 2000) {											// Validating that price is lower than 2000
-							result = "true";
-							resultsStringList.add(result);
-						} else {
-							result = "false";
-							resultsStringList.add(result);
-						}
-					}
+				pricesList.add(pof.firstPriceRange.getText());						// adding one result price that is in a range and so in a different element than all the others on this list
 				
-				isListCorrect = func.isListCorrect(resultsStringList, "true");		
+				resultsStringList = func.isPriceUnder2000(pricesList);
+				isListCorrect = func.isListCorrectOneItem(resultsStringList, "true");		
 				
-				if (isFilterOn && isListCorrect && numOfResults == resultsStringList.size()) {									
-					func.printToReport(true, testName, false);				
-					Assert.assertEquals(isFilterOn, true, "Wrong filter");			
-				} else {
-					func.printToReport(false, testName, false);
-					Assert.assertEquals(true, false, "Filter or List are incorrect");
-				}				
-				
+					if (isFilterOn && isListCorrect && numOfResults == resultsStringList.size()) {									
+						func.printToReport(true, testName, false);				
+						Assert.assertEquals(isFilterOn, true, "Wrong filter");			
+					} else {
+						func.printToReport(false, testName, false);
+						Assert.assertEquals(true, false, "Filter or List are incorrect");
+					}								
 			} else {
 				func.printToReport(false, testName, false);
 				Assert.assertEquals(true, false, "Null filter");
@@ -152,8 +128,7 @@ public class filtersTest extends setUp {
   public void removingOneFilter() throws AWTException, IOException {
 	  /*using classicGuitarFilter test method again*/
 	  try {
-		  pof.closeFilter_3.click();
-		  Thread.sleep(1000);
+		  func.clickOnElement(pof.closeFilter_3);
 		  classicGuitarFilter();
 	  } catch (Exception e) {
 		  func.printToReport(isFilterOn, testName, true);
