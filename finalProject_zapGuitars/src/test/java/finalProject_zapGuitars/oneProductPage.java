@@ -26,15 +26,13 @@ public class oneProductPage extends setUp {
   public void productHeadlineLink() throws InterruptedException, AWTException, IOException {
 	  
 	  testName = "Product headline link";
-	  expected = "şâéèøä ÷ìàñéú Cort AC100 - æàô";
+	  expected = "×’×™×˜×¨×” ×§×œ××¡×™×ª Cort AC100 - ×–××¤";
 	  
 	  try {
 		  func.clickOnElement(pof.AC100HeadlineLink);		  
-		  isPageCorrect = func.checkPageTitle(expected);		  
-		  
-		  driver.navigate().back();
-		  
+		  isPageCorrect = func.checkPageTitle(expected);		  		  		  
 		  func.printToReport(isPageCorrect, testName, false);
+		  driver.navigate().back();
 		  Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  
 	  } catch (Exception e) {
@@ -48,15 +46,13 @@ public class oneProductPage extends setUp {
   public void productMoreDetails() throws AWTException, IOException {
 	  
 	  testName = "Product more details link";
-	  expected = "îôøè èëğé şâéèøä ÷ìàñéú";
+	  expected = "××¤×¨×˜ ×˜×›× ×™ â€×’×™×˜×¨×” ×§×œ××¡×™×ª";
 	  
 	  try {
 		  func.clickOnElement(pof.AC100MoreDetailsLink);		  
-		  isPageCorrect = func.checkPageTitle(expected);
-		  
+		  isPageCorrect = func.checkPageTitle(expected);		  		  
+		  func.printToReport(isPageCorrect, testName, false);
 		  driver.navigate().back();
-		  
-		  func.printToReport(isPageCorrect, testName, false);		  		  
 		  Assert.assertEquals(isPageCorrect, true, "Wrong page");
 		  
 	  } catch (Exception e) {
@@ -66,11 +62,33 @@ public class oneProductPage extends setUp {
 	}
   }
   
+  
   @Test (priority = 3, enabled = true)
+  public void productReviews() throws AWTException, IOException {
+	  
+	  testName = "User reviews for Cort AC100";
+	  expected = "ratemodel";
+	  
+	  try {
+		  func.clickOnElement( pof.AC100reviewsLink);	  
+		  isPageCorrect = func.checkPageURL(expected);		  
+		  func.printToReport(isPageCorrect, testName, false);
+		  driver.navigate().back();
+		  Assert.assertEquals(isPageCorrect, true, "Wrong page");
+		  
+	  } catch (Exception e) {
+		  func.printToReport(isPageCorrect, testName, true);			
+		  e.printStackTrace();			
+		  Assert.assertEquals(false, true, "An exception occurred");
+	}
+  }
+  
+  
+  @Test (priority = 4, enabled = true)
   public void productPriceComparison() throws AWTException, IOException {
 	  
 	  testName = "Product price comparison link";
-	  expected = "şâéèøä ÷ìàñéú Cort AC100 - æàô";
+	  expected = "×’×™×˜×¨×” ×§×œ××¡×™×ª Cort AC100 - ×–××¤";
 	  
 	  try {
 		  func.clickOnElement( pof.AC100PriceCompareLink);	  
@@ -85,13 +103,13 @@ public class oneProductPage extends setUp {
 	}
   }
   
- 
-  
-  @Test (priority = 4, enabled = true)
+  @Test (priority = 5, dependsOnMethods = {"productPriceComparison"} , enabled = true)
   public void localStore() throws AWTException, IOException {
 	  
+	  /*this test and the following test depends on page that opened in former test "productPriceComparison"*/
+	  
 	  testName = "Buy product at local Store page";
-	  expected = "÷ğéä áçğåú î÷åîéú";
+	  expected = "×§× ×™×” ×‘×—× ×•×ª ××§×•××™×ª";
 	  
 	  try {
 		func.clickOnElement(pof.localStore);		
@@ -106,11 +124,11 @@ public class oneProductPage extends setUp {
 	}
   }
   
-  @Test (priority = 5, enabled = true)
+  @Test (priority = 6, enabled = true)
   public void techSpec() throws AWTException, IOException {
 	
 	  testName = "Product full technical specification page";
-	  expected = "îôøè èëğé şâéèøä ÷ìàñéú";
+	  expected = "××¤×¨×˜ ×˜×›× ×™ â€×’×™×˜×¨×” ×§×œ××¡×™×ª";
 	  
 	  try {
 		func.clickOnElement(pof.techSpec);		
@@ -125,7 +143,7 @@ public class oneProductPage extends setUp {
 	}
 }
   
-  @Test (priority = 6, enabled = true)
+  @Test (priority = 7, enabled = true)
   public void userReviews() throws AWTException, IOException {
 	  
 	  testName = "Product user reviews page";

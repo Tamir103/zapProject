@@ -43,20 +43,17 @@ public class footerTest extends setUp {
   public void aboutLinkTest() throws InterruptedException, AWTException, IOException {
 	
 	  testName = "About link";
-	  expectedTitle = "ΰεγεϊ zap δωεεΰϊ ξηιψιν";
+	  expectedTitle = "ΧΧ•Χ“Χ•Χª zap Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ";
 
 	 try { 
-		 isPageTitleTrue = func.linkTest(mainPageID.aboutLink, driver, expectedTitle); // Method that returns a boolean, checks if page title is as expected 
-	 
-		 func.printToReport(isPageTitleTrue, testName, false);						// Method that prints to Extent Report (exception=false)
-	 
-		 func.returnToMainPage();												// Method that navigates back to main page
-	 
+		 isPageTitleTrue = func.linkTest(mainPageID.aboutLink, driver, expectedTitle); 	// Method that returns a boolean, checks if page title is as expected 	 
+		 func.printToReport(isPageTitleTrue, testName, false);							// Method that prints to Extent Report (exception=false)
+		 func.returnToMainPage();														// Method that navigates back to main page
 		 Assert.assertEquals(isPageTitleTrue, true, "Title incorrect");
 		 
 	 } catch (Exception e) { 
 		func.printToReport(isPageTitleTrue, testName, true);						// Printing failed test as result of an exception (=true)
-		
+		e.printStackTrace();
 		Assert.assertEquals(false, true, "An exception occurred");
 	}
   }
@@ -66,20 +63,17 @@ public class footerTest extends setUp {
   public void termsLink() throws InterruptedException, AWTException, IOException {
 	
 	  testName = "Terms link";
-	  expectedTitle = "ϊπΰι ωιξεω - ζΰτ δωεεΰϊ ξηιψιν";
+	  expectedTitle = "ΧªΧ ΧΧ™ Χ©Χ™ΧΧ•Χ© - Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ";
 	 
 	  try {
-		  isPageTitleTrue = func.linkTest(mainPageID.termsLink, driver, expectedTitle);
-			 
-		  func.printToReport(isPageTitleTrue, testName, false);
-			 
-		  func.returnToMainPage();
-			 
+		  isPageTitleTrue = func.linkTest(mainPageID.termsLink, driver, expectedTitle);			 
+		  func.printToReport(isPageTitleTrue, testName, false);			 
+		  func.returnToMainPage();			 
 		  Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		  
 	  } catch (Exception e) {
 		  func.printToReport(isPageTitleTrue, testName, true);
-		
+		  e.printStackTrace();
 		  Assert.assertEquals(false, true , "An Exception occurred");
 	}
   }
@@ -88,21 +82,18 @@ public class footerTest extends setUp {
   public void personalAreaLink() throws InterruptedException, AWTException, IOException {
 	  
 	  testName = "Personal area link";
-	  expectedTitle = "ζΰτ δωεΰϊ ξηιψιν - ζΰτ ωμι";
+	  expectedTitle = "Χ–ΧΧ¤ Χ”Χ©Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ - Χ–ΧΧ¤ Χ©ΧΧ™";
 	
 	 try { 
-		 isPageTitleTrue = func.linkTest(mainPageID.personalLink, driver, expectedTitle);
-	  
-		 func.printToReport(isPageTitleTrue, testName, false);
-	  
-		 func.returnToMainPage();
-	  
+		 isPageTitleTrue = func.linkTest(mainPageID.personalLink, driver, expectedTitle);	  
+		 func.printToReport(isPageTitleTrue, testName, false);	  
+		 func.returnToMainPage();	  
 		 Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		 
 	 } catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
   }
 
@@ -110,21 +101,18 @@ public class footerTest extends setUp {
  public void contactLink() throws InterruptedException, AWTException, IOException {
 	 
 	 testName = "Contact link";
-	 expectedTitle = "ωιψεϊ μχεηεϊ ζΰτ δωεεΰϊ ξηιψιν";
+	 expectedTitle = "Χ©Χ™Χ¨Χ•Χª ΧΧ§Χ•Χ—Χ•Χª Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ";
 	
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.contactLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
-		func.returnToMainPage();
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.contactLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
+		func.returnToMainPage();	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 	 
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -132,21 +120,18 @@ public class footerTest extends setUp {
  public void QnALink() throws InterruptedException, AWTException, IOException {
 	 
 	 testName = "Q&A link";
-	 expectedTitle = "ωΰμεϊ λμμιεϊ - ζΰτ δωεεΰϊ ξηιψιν"; 
+	 expectedTitle = "Χ©ΧΧΧ•Χª Χ›ΧΧΧ™Χ•Χª - Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.qNaLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.qNaLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -154,23 +139,19 @@ public class footerTest extends setUp {
  public void shopGuideLink() throws InterruptedException, AWTException, IOException {
 	 
 	 testName = "Shop guide link";
-	 expectedTitle = "ξγψικ δηπειεϊ"; 
+	 expectedTitle = "ΧΧ“Χ¨Χ™Χ Χ”Χ—Χ Χ•Χ™Χ•Χª"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.shopGuideLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
-		func.returnToMainPage();
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.shopGuideLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
+		func.returnToMainPage();	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
-	 
  }
 
  
@@ -178,21 +159,18 @@ public class footerTest extends setUp {
  public void priceDropLink() throws AWTException, IOException {
 	 
 	 testName = "Price drop link";
-	 expectedTitle = "πτιμϊ ξηιψιν - ζΰτ δωεεΰϊ ξηιψιν"; 
+	 expectedTitle = "Χ Χ¤Χ™ΧΧª ΧΧ—Χ™Χ¨Χ™Χ - Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.priceDropLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
-		func.returnToMainPage();
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.priceDropLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
+		func.returnToMainPage();	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -201,21 +179,18 @@ public class footerTest extends setUp {
  public void allCategoriesLink() throws AWTException, IOException {
 	 
 	 testName = "All cateogories link";
-	 expectedTitle = "ζΰτ δωεεΰϊ ξηιψιν - λμ δχθβεψιεϊ"; 
+	 expectedTitle = "Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ - Χ›Χ Χ”Χ§ΧΧ’Χ•Χ¨Χ™Χ•Χª"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.allCategoriesLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
-		func.returnToMainPage();
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.allCategoriesLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
+		func.returnToMainPage();	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -224,21 +199,18 @@ public class footerTest extends setUp {
  public void reviewsLink() throws AWTException, IOException {
 	 
 	 testName = "User reviews link";
-	 expectedTitle = "ηεεϊ γςϊ ΰηψεπεϊ ςμ ξεφψιν - ζΰτ δωεεΰϊ ξηιψιν"; 
+	 expectedTitle = "Χ—Χ•Χ•Χª Χ“ΧΆΧª ΧΧ—Χ¨Χ•Χ Χ•Χª ΧΆΧ ΧΧ•Χ¦Χ¨Χ™Χ - Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.ReviewsLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.ReviewsLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -252,24 +224,18 @@ public class footerTest extends setUp {
 	 clickLink = true;
 	 
 	try { 
-		iframeDiv_displayValue = mainPageID.logInDiv_iframe.getAttribute("style");
-		
-		isIframe = func.visibleIframeTest(clickLink, mainPageID.logInLink, mainPageID.logInDiv_iframe, iframeId);
-		
-		func.printToReport(isIframe, testName, false);
-		
-		func.closeIframe(mainPageID.closeLoginIframe);
-		
-		func.returnToMainPage();
-		
+		iframeDiv_displayValue = mainPageID.logInDiv_iframe.getAttribute("style");		
+		isIframe = func.visibleIframeTest(clickLink, mainPageID.logInLink, mainPageID.logInDiv_iframe, iframeId);		
+		func.printToReport(isIframe, testName, false);		
+		func.closeIframe(mainPageID.closeLoginIframe);		
+		func.returnToMainPage();		
 		Assert.assertEquals(isIframe, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isIframe, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
-	
  }
  
  
@@ -277,21 +243,18 @@ public class footerTest extends setUp {
  public void shopingILLink() throws AWTException, IOException {
 	 
 	 testName = "Shoping IL 2020 link";
-	 expectedTitle = "2020 Shopping IL - λμ δξαφςιν δηξιν ωμ ωετιπβ IL αζΰτ"; 
+	 expectedTitle = "2020 Shopping IL - Χ›Χ Χ”ΧΧ‘Χ¦ΧΆΧ™Χ Χ”Χ—ΧΧ™Χ Χ©Χ Χ©Χ•Χ¤Χ™Χ Χ’ IL Χ‘Χ–ΧΧ¤"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.shopingILLink, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
-		func.returnToMainPage();
-	 
+		isPageTitleTrue = func.linkTest(mainPageID.shopingILLink, driver, expectedTitle);	 	 
+		func.printToReport(isPageTitleTrue, testName, false);	 
+		func.returnToMainPage();	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -300,21 +263,18 @@ public class footerTest extends setUp {
  public void addYourShopLink() throws AWTException, IOException {
 	 
 	 testName = "Add your shop link";
-	 expectedTitle = "δερτϊ ηπεϊ μζΰτ - δετςδ αζΰτ δωεεΰϊ ξηιψιν"; 
+	 expectedTitle = "Χ”Χ•Χ΅Χ¤Χª Χ—Χ Χ•Χª ΧΧ–ΧΧ¤ - Χ”Χ•Χ¤ΧΆΧ” Χ‘Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.addYourShopLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -323,21 +283,18 @@ public class footerTest extends setUp {
  public void adLink() throws AWTException, IOException {
 	 
 	 testName = "Advertise in the site link";
-	 expectedTitle = "τψρεν αζΰτ δωεεΰϊ ξηιψιν"; 
+	 expectedTitle = "Χ¤Χ¨Χ΅Χ•Χ Χ‘Χ–ΧΧ¤ Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.adLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -346,17 +303,15 @@ public class footerTest extends setUp {
  public void shopsAndImportsLink() throws AWTException, IOException {
 	 
 	 testName = "Shops and Imports interface link";
-	 expectedTitle = "ξξωχ ηπειεϊ"; 
+	 expectedTitle = "ΧΧΧ©Χ§ Χ—Χ Χ•Χ™Χ•Χª"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.shopsAndImportsLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
 		// close tabs part due to new tabs being opened from this link	
 		try {
 			func.closeTab();
-		
 			func.returnToMainPage();
 			
 		} catch (Exception e) {
@@ -367,8 +322,8 @@ public class footerTest extends setUp {
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -377,17 +332,15 @@ public class footerTest extends setUp {
  public void adInterfaceLink() throws AWTException, IOException {
 	 
 	 testName = "Advertising interface Link";
-	 expectedTitle = "ξξωχ ξτψρξιν"; 
+	 expectedTitle = "ΧΧΧ©Χ§ ΧΧ¤Χ¨Χ΅ΧΧ™Χ"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.adInterfaceLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
 	 
 		// close tabs part due to new tabs being opened from this link	
 		try {
 			func.closeTab();
-		
 			func.returnToMainPage();
 			
 		} catch (Exception e) {
@@ -398,10 +351,9 @@ public class footerTest extends setUp {
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
-	
  }
  
 
@@ -409,21 +361,18 @@ public class footerTest extends setUp {
  public void tourismLink() throws AWTException, IOException {
 	 
 	 testName = "Tourism Link";
-	 expectedTitle = "θιρεϊ – zap ϊιιψεϊ δωεεΰϊ ξηιψι θιρεϊ"; 
+	 expectedTitle = "ΧΧ™Χ΅Χ•Χª β€“ zap ΧªΧ™Χ™Χ¨Χ•Χª Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™ ΧΧ™Χ΅Χ•Χª"; 
 	 
 	try { 
-		isPageTitleTrue = func.linkTest(mainPageID.tourismLink, driver, expectedTitle);
-	 	 
+		isPageTitleTrue = func.linkTest(mainPageID.tourismLink, driver, expectedTitle);	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -432,21 +381,18 @@ public class footerTest extends setUp {
  public void supermarketLink() throws AWTException, IOException {
 	 
 	 testName = "Supermarket Link";
-	 expectedTitle = "ζΰτ ξψχθ - δζΰτ ωμ δρετψιν"; 
+	 expectedTitle = "Χ–ΧΧ¤ ΧΧ¨Χ§Χ - Χ”Χ–ΧΧ¤ Χ©Χ Χ”Χ΅Χ•Χ¤Χ¨Χ™Χ"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.supermarketLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -454,21 +400,18 @@ public class footerTest extends setUp {
  public void dailyDealsLink() throws AWTException, IOException {
 	 
 	 testName = "Daily deals Link";
-	 expectedTitle = "ζΰτ τμερ – γιμιν εδπηεϊ αξηιψιν δξωϊμξιν αιεϊψ!"; 
+	 expectedTitle = "Χ–ΧΧ¤ Χ¤ΧΧ•Χ΅ β€“ Χ“Χ™ΧΧ™Χ Χ•Χ”Χ Χ—Χ•Χª Χ‘ΧΧ—Χ™Χ¨Χ™Χ Χ”ΧΧ©ΧªΧΧΧ™Χ Χ‘Χ™Χ•ΧªΧ¨!"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.dailyDealsLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -480,17 +423,14 @@ public class footerTest extends setUp {
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.tavoLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -498,21 +438,18 @@ public class footerTest extends setUp {
  public void wisebuyLink() throws AWTException, IOException {
 	 
 	 testName = "WiseBuy Link";
-	 expectedTitle = "ξγψιλι χπιιδ, ρχιψεϊ ξεφψιν, δωεεΰϊ ξηιψιν - WiseBuy"; 
+	 expectedTitle = "ΧΧ“Χ¨Χ™Χ›Χ™ Χ§Χ Χ™Χ™Χ”, Χ΅Χ§Χ™Χ¨Χ•Χª ΧΧ•Χ¦Χ¨Χ™Χ, Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ - WiseBuy"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.wiseBuyLink, driver, expectedTitle);
-	 	 
 		func.printToReport(isPageTitleTrue, testName, false);
-	 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
  
@@ -520,25 +457,21 @@ public class footerTest extends setUp {
  public void zap360Link() throws AWTException, IOException {
 	 
 	 testName = "Zap 360 Link";
-	 expectedTitle = "ζΰτ βψετ - ωιεεχ γιβιθμι μςρχιν"; 
+	 expectedTitle = "Χ–ΧΧ¤ Χ’Χ¨Χ•Χ¤ - Χ©Χ™Χ•Χ•Χ§ Χ“Χ™Χ’Χ™ΧΧΧ™ ΧΧΆΧ΅Χ§Χ™Χ"; 
 	 
 	try { 
 		isPageTitleTrue = func.linkTest(mainPageID.zap360Link, driver, expectedTitle);
-	 	 
-		func.printToReport(isPageTitleTrue, testName, false);
-	 
+		func.printToReport(isPageTitleTrue, testName, false); 
 		func.returnToMainPage();
-	 
 		Assert.assertEquals(isPageTitleTrue, true, testName + " title incorrect");
 		
 	} catch (Exception e) {
 		 func.printToReport(isPageTitleTrue, testName, true);
-			
-		  Assert.assertEquals(false, true , "An Exception occurred");
+		 e.printStackTrace();
+		 Assert.assertEquals(false, true , "An Exception occurred");
 	}
  }
   
- 
   @BeforeClass
   public void beforeClass() {
 	  
@@ -546,8 +479,6 @@ public class footerTest extends setUp {
 	  driver = new ChromeDriver();
 	  driver.get("https://www.zap.co.il/");
 	  driver.manage().window().maximize();
-	  
-//	  s = new ArrayList<String>(driver.getWindowHandles());
 	  
 	//sampling all the web elements from mainPageID class, if web page is refreshed all samples needs to be sampled again		
 	  mainPageID = PageFactory.initElements(driver, zapMainPageID.class);
@@ -560,9 +491,6 @@ public class footerTest extends setUp {
   public void afterClass() {
 	  driver.close();
 	  extent.flush();
-	  
-//	  func.convertFileEncoding("D:\\Automation\\Final project\\2021-12-01-19-27-45", targetPath, targetEncoding);
-	  
   }
 
 }

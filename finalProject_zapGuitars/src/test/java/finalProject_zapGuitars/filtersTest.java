@@ -44,7 +44,7 @@ public class filtersTest extends setUp {
   public void classicGuitarFilter() throws InterruptedException, AWTException, IOException {
 	 
 	  testName = "Classic guitar filter";
-	  expected = "÷ìàñéú";
+	  expected = "×§×œ××¡×™×ª";
 		
 		try {
 			try {												// try/catch for second test (removingOneFilter)

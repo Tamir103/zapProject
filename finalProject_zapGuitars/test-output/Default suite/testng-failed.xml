@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="finalProject_zapGuitars.oneProductPage">
+      <class name="finalProject_zapGuitars.navigateToGuitars">
         <methods>
-          <include name="productPriceComparison"/>
+          <include name="sideSportAndLeisure"/>
+          <include name="sideMenuMorebutton"/>
           <include name="afterClass"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- finalProject_zapGuitars.oneProductPage -->
+      </class> <!-- finalProject_zapGuitars.navigateToGuitars -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

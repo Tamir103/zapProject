@@ -15,23 +15,23 @@ public class zapMainPageID {
 	@FindBy (id = "select2-keyword-container")
 	public static WebElement mainHeaderSearchBox;
 	
-	@FindBy (xpath = "//input[@aria-label='μηυ μηιτεω αΰϊψ']")
+	@FindBy (xpath = "//input[@aria-label='ΧΧ—Χ¥ ΧΧ—Χ™Χ¤Χ•Χ© Χ‘ΧΧªΧ¨']")
 	public static WebElement mainSearchButton;
 
 	
 	/*
 	 Main Menus
 	  */
-	@FindBy (linkText = "λμ δχθβεψιεϊ")
+	@FindBy (linkText = "Χ›Χ Χ”Χ§ΧΧ’Χ•Χ¨Χ™Χ•Χª")
 	public static WebElement allCategories;
 	
-	@FindBy (xpath = "//li[@data-title='τπΰι ερτεψθ']")
+	@FindBy (xpath = "//li[@data-title='Χ¤Χ ΧΧ™ Χ•Χ΅Χ¤Χ•Χ¨Χ']")
 	public static WebElement categoriesSubmenuSportNLeisure;
 	
-	@FindBy (linkText = "βιθψεϊ")
+	@FindBy (linkText = "Χ’Χ™ΧΧ¨Χ•Χª")
 	public static WebElement submenuGuitars;
 	
-	@FindBy (linkText = "τπΰι ερτεψθ")
+	@FindBy (linkText = "Χ¤Χ ΧΧ™ Χ•Χ΅Χ¤Χ•Χ¨Χ")
 	public static WebElement mainSportNLeisure;
 	
 	@FindBy (xpath = "//ul[@class='all-cat']/li[4]") //list may change
@@ -41,53 +41,53 @@ public class zapMainPageID {
 	/*
 	 Side Menus
 	 */
-	@FindBy (xpath = "//a[@aria-label='τπΰι ερτεψθ']")
+	@FindBy (xpath = "//a[@aria-label='Χ¤Χ ΧΧ™ Χ•Χ΅Χ¤Χ•Χ¨Χ']")
 	public static WebElement sideSportNLeisure;
 	
-	@FindBy (xpath = "//a[@aria-label='ξεφψιν περτιν αϊηεν τπΰι ερτεψθ']")
+	@FindBy (xpath = "//a[@aria-label='ΧΧ•Χ¦Χ¨Χ™Χ Χ Χ•Χ΅Χ¤Χ™Χ Χ‘ΧªΧ—Χ•Χ Χ¤Χ ΧΧ™ Χ•Χ΅Χ¤Χ•Χ¨Χ']")
 	public static WebElement moreSportNLeisure;
 	
 	/*
 	 Footer links
 	 */
 //about link
-	@FindBy (linkText = "ΰεγεϊ zap δωεεΰϊ ξηιψιν")
+	@FindBy (linkText = "ΧΧ•Χ“Χ•Χª zap Χ”Χ©Χ•Χ•ΧΧª ΧΧ—Χ™Χ¨Χ™Χ")
 	public static WebElement aboutLink;
 	
 //terms of use link
-	@FindBy (linkText = "ϊπΰι ωιξεω")
+	@FindBy (linkText = "ΧªΧ ΧΧ™ Χ©Χ™ΧΧ•Χ©")
 	public static WebElement termsLink;
 	
 //personal info link
-	@FindBy (linkText = "δΰιζεψ δΰιωι")
+	@FindBy (linkText = "Χ”ΧΧ™Χ–Χ•Χ¨ Χ”ΧΧ™Χ©Χ™")
 	public static WebElement personalLink;
 
 //contact link
-	@FindBy (linkText = "φεψ χωψ")
+	@FindBy (linkText = "Χ¦Χ•Χ¨ Χ§Χ©Χ¨")
 	public static WebElement contactLink;
 	
 //Q & A link
-	@FindBy (linkText = "ωΰμεϊ εϊωεαεϊ")
+	@FindBy (linkText = "Χ©ΧΧΧ•Χª Χ•ΧªΧ©Χ•Χ‘Χ•Χª")
 	public static WebElement qNaLink;
 	
 //shop guide link	
-	@FindBy (linkText = "ξγψικ ηπειεϊ")
+	@FindBy (linkText = "ΧΧ“Χ¨Χ™Χ Χ—Χ Χ•Χ™Χ•Χª")
 	public static WebElement shopGuideLink;
 	
 //price drop link	
-	@FindBy (linkText = "πτιμϊ ξηιψιν")
+	@FindBy (linkText = "Χ Χ¤Χ™ΧΧª ΧΧ—Χ™Χ¨Χ™Χ")
 	public static WebElement priceDropLink;
 	
 //all categories link	
-	@FindBy (linkText = "λμ δχθβεψιεϊ")
+	@FindBy (linkText = "Χ›Χ Χ”Χ§ΧΧ’Χ•Χ¨Χ™Χ•Χª")
 	public static WebElement allCategoriesLink;
 	
 //guitar reviews link - if clicking from guitars page
-	@FindBy (linkText = "ηεεϊ γςϊ ξεφψιν")
+	@FindBy (linkText = "Χ—Χ•Χ•Χª Χ“ΧΆΧª ΧΧ•Χ¦Χ¨Χ™Χ")
 	public static WebElement ReviewsLink;
 	
 //log in link	
-	@FindBy (linkText = "δψωξδ μΰϊψ")
+	@FindBy (linkText = "Χ”Χ¨Χ©ΧΧ” ΧΧΧªΧ¨")
 	public static WebElement logInLink;
 // log in iframe visible 
 	@FindBy (id = "SSO_LoginIframe")
@@ -97,35 +97,35 @@ public class zapMainPageID {
 	public static WebElement closeLoginIframe;
 	
 //Shopping IL 2020 link	
-	@FindBy (linkText = "ωετιπβ ΰιι ΰμ 2020")
+	@FindBy (linkText = "Χ©Χ•Χ¤Χ™Χ Χ’ ΧΧ™Χ™ ΧΧ 2020")
 	public static WebElement shopingILLink;
 	
 //add your shop link	
-	@FindBy (linkText = "φψσ ηπεϊκ μ zap")
+	@FindBy (linkText = "Χ¦Χ¨Χ£ Χ—Χ Χ•ΧªΧ Χ zap")
 	public static WebElement addYourShopLink;
 	
 //Advertise link	
-	@FindBy (linkText = "τψρν αΰϊψ")
+	@FindBy (linkText = "Χ¤Χ¨Χ΅Χ Χ‘ΧΧªΧ¨")
 	public static WebElement adLink;
 	
 //shops / imports interface link	
-	@FindBy (partialLinkText = "ξξωχ ηπειεϊ / ιαεΰπιν")
+	@FindBy (partialLinkText = "ΧΧΧ©Χ§ Χ—Χ Χ•Χ™Χ•Χª / Χ™Χ‘Χ•ΧΧ Χ™Χ")
 	public static WebElement shopsAndImportsLink;
 	
 //advertisement interface link	
-	@FindBy (linkText = "ξξωχ ξτψρξιν")
+	@FindBy (linkText = "ΧΧΧ©Χ§ ΧΧ¤Χ¨Χ΅ΧΧ™Χ")
 	public static WebElement adInterfaceLink; 
 	
 //tourism link 	
-	@FindBy (linkText = "ϊιιψεϊ")
+	@FindBy (linkText = "ΧªΧ™Χ™Χ¨Χ•Χª")
 	public static WebElement tourismLink;
 	
 //supermarkets link	
-	@FindBy (linkText = "ρετψξψχθιν")
+	@FindBy (linkText = "Χ΅Χ•Χ¤Χ¨ΧΧ¨Χ§ΧΧ™Χ")
 	public static WebElement supermarketLink;
 	
 //daily deals link	
-	@FindBy (linkText = "γιμιν ιεξιιν")
+	@FindBy (linkText = "Χ“Χ™ΧΧ™Χ Χ™Χ•ΧΧ™Χ™Χ")
 	public static WebElement dailyDealsLink;
 	
 //Tavo link	

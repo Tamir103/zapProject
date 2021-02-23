@@ -20,13 +20,16 @@ public class zapGuitars_POF {
 	@FindBy (xpath = "//div[@class='MoreInfo']//a[contains(@aria-label, 'Cort AC100')]")
 	public static WebElement AC100MoreDetailsLink;
 	
-	@FindBy (linkText = "÷ğééä áçğåú î÷åîéú") 
+	@FindBy (xpath = "//div[@class='ReviewsLink']/a[contains(@aria-label, 'Cort AC100')]")
+	public static WebElement AC100reviewsLink;
+	
+	@FindBy (linkText = "×§× ×™×™×” ×‘×—× ×•×ª ××§×•××™×ª") 
 	public static WebElement localStore;
 	
-	@FindBy (linkText = "îôøè èëğé îìà")
+	@FindBy (linkText = "××¤×¨×˜ ×˜×›× ×™ ××œ×")
 	public static WebElement techSpec;
 	
-	@FindBy (linkText = "çååú ãòú")
+	@FindBy (linkText = "×—×•×•×ª ×“×¢×ª")
 	public static WebElement userReviews;
 
 /*
@@ -50,19 +53,19 @@ public class zapGuitars_POF {
 	public static WebElement filterTitle;
 	
 // closing filters - the number in the div needs to be changed depending on amount of filters used from right to left
-	@FindBy (xpath = "//div[@class='FilterButtons']/div[1]/a[@aria-label='ìñâéøú äñéğåï']")
+	@FindBy (xpath = "//div[@class='FilterButtons']/div[1]/a[@aria-label='×œ×¡×’×™×¨×ª ×”×¡×™× ×•×Ÿ']")
 	public static WebElement closeFilter_1;
 	
 // acoustic guitar filter link
-	@FindBy (xpath = "//a[contains(@aria-label, 'ìñéğåï ìôé ñåâ âéèøä ÷ìàñéú')]")
+	@FindBy (xpath = "//a[contains(@aria-label, '×œ×¡×™× ×•×Ÿ ×œ×¤×™ ×¡×•×’ ×’×™×˜×¨×” ×§×œ××¡×™×ª')]")
 	public static WebElement classicFilterButton;
 	
 // closing filters - the number in the div needs to be changed depending on amount of filters used from right to left
-	@FindBy (xpath = "//div[@class='FilterButtons']/div[3]/a[@aria-label='ìñâéøú äñéğåï']")
+	@FindBy (xpath = "//div[@class='FilterButtons']/div[3]/a[@aria-label='×œ×¡×’×™×¨×ª ×”×¡×™× ×•×Ÿ']")
 	public static WebElement closeFilter_3;
 
 // under 2,000 price filter
-	@FindBy (xpath = "//div[contains(@aria-label, 'òã 2,000')]")
+	@FindBy (xpath = "//div[contains(@aria-label, '×¢×“ 2,000')]")
 	public static WebElement under2000Filter;
 	
 // number of results
@@ -70,7 +73,7 @@ public class zapGuitars_POF {
 	public static List<WebElement> numOfResultsList;
 	
 // Forward button (check attribute, if disabled)
-	@FindBy (xpath = "//a[@aria-label='òáåø ìãó äáà']/div")
+	@FindBy (xpath = "//a[@aria-label='×¢×‘×•×¨ ×œ×“×£ ×”×‘×']/div")
 	public static WebElement forwardButton;
 	
 // prices string if prices are not a range
@@ -85,8 +88,16 @@ public class zapGuitars_POF {
 	multiple selection window
 	*/
 // multiple selection by manufacturer	
-	@FindBy (xpath = "//div[@class='MultiSelectionBtn']/span[contains(@aria-label, 'éöøï')]")
+	@FindBy (xpath = "//div[@class='MultiSelectionBtn']/span[contains(@aria-label, '×™×¦×¨×Ÿ')]")
 	public static WebElement multiSelectManufacturerButton;
+	
+// more manufacturers button that opens multiple choice window in single choice mode
+	@FindBy (xpath = "//div[@class='SelectMoreTxt']/span[contains(@aria-label, '×™×¦×¨×Ÿ')]")
+	public static WebElement moreManufacturer;
+	
+// closing multiple choice by manufacturer window
+	@FindBy (xpath = "//div[@id='morefilterPopup']/div[@class='closePopup']")
+	public static WebElement closeMultiWindow;
 	
 // is multiple choice by manufacturer window open? check style for this element for visible or hidden
 	@FindBy (xpath = "//div[@id='moreFiltersPopupOverlay']")
@@ -101,7 +112,7 @@ public class zapGuitars_POF {
 	public static List<WebElement> multiChoiceItemsQuantityList;
 	
 // one choice button (not multiple choice)
-	@FindBy (xpath = "//a[@aria-label='ìáçéøú îàôééï']/div[@class='txt']")
+	@FindBy (xpath = "//a[@aria-label='×œ×‘×—×™×¨×ª ×××¤×™×™×Ÿ']/div[@class='txt']")
 	public static WebElement oneChoiceButtton;
 	
 // multiple choice or single choice?
@@ -109,7 +120,7 @@ public class zapGuitars_POF {
 	public static WebElement checkboxDisplay;
 	
 // yamaha single option choice in multiple choice window	
-	@FindBy (xpath = "//a[@aria-label='áçø éöøï Yamaha ']/div[@class='txtLtr']")
+	@FindBy (xpath = "//a[@aria-label='×‘×—×¨ ×™×¦×¨×Ÿ Yamaha ']/div[@class='txtLtr']")
 	public static WebElement yamahaSingleChoice;
 	
 // checkbox for Yamaha in multiple selection window
@@ -117,11 +128,11 @@ public class zapGuitars_POF {
 	public static WebElement yamahaCheckbox;
 	
 // checkbox for Fender in multiple selection window
-	@FindBy (xpath = "//input[@aria-label='Fender éöøï ']")
+	@FindBy (xpath = "//input[@aria-label='Fender ×™×¦×¨×Ÿ ']")
 	public static WebElement fenderCheckbox;
 	
 // checbox for Takamine in multiple selection window
-	@FindBy (xpath = "//input[@aria-label='Takamine éöøï ']")
+	@FindBy (xpath = "//input[@aria-label='Takamine ×™×¦×¨×Ÿ ']")
 	public static WebElement takamineCheckbox;
 	
 // show filter results button
@@ -129,16 +140,11 @@ public class zapGuitars_POF {
 	public static WebElement filterButton;
 	
 // sort by alphabetical order button
-	@FindBy (linkText = "à-á")
+	@FindBy (linkText = "×-×‘")
 	public static WebElement alphabetButton;
 
 // sort by quantity button
-	@FindBy (linkText = "ëîåú îåöøéí")
-	public static WebElement quantityButton;
-	
-// multiple selection window search box
-	@FindBy (xpath = "//input[contains(@aria-label, 'îàôééï')]")
-	public static WebElement multiSearchbox;
-	
+	@FindBy (linkText = "×›××•×ª ××•×¦×¨×™×")
+	public static WebElement quantityButton;	
 
 }

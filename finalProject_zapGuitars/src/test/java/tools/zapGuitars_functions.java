@@ -25,6 +25,7 @@ import javax.lang.model.element.Element;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -38,45 +39,6 @@ public class zapGuitars_functions extends setUp {
 	static ArrayList<String> tabs;
 	static List<String> falseStrings = new ArrayList<String>();
 	static ArrayList<Boolean> booleanList = new ArrayList<Boolean>();
-	
-	public static void convertFileEncoding(String sourcePath, Optional<String> targetPath, Optional<String> targetEncoding) throws IOException, InterruptedException{
-	    
-	    // Wait for file to exist - 10 seconds
-	    for (int i=0; i<20 ; i++) {
-	      if(!Files.exists(Paths.get(sourcePath)))
-	        Thread.sleep(500);
-	      else
-	        break;
-	    }
-	          
-	    File infile = new File(sourcePath);
-	    
-	    String trgtPath = targetPath.orElse(sourcePath + "Temp") ;
-	    String trgtEncoding = targetEncoding.orElse("UTF-8");
-	    File outfile = new File(trgtPath);
-	    
-	    // Convert    
-	    InputStreamReader fis = new InputStreamReader(new FileInputStream(infile));
-	    Reader in = new InputStreamReader(new FileInputStream(infile),fis.getEncoding());
-	    Writer out = new OutputStreamWriter(new FileOutputStream(outfile), trgtEncoding);
-
-	    int c;
-
-	    while ((c = in.read()) != -1){
-	      out.write(c);}
-
-	    in.close();
-	    out.close();
-	    fis.close();
-
-	    // if target path not specified - change the original file to target file
-	    if (!targetPath.isPresent()) {
-	      infile.delete();
-	      outfile.renameTo(new File(sourcePath));
-	    }
-	    
-	    
-	  }
 
 	public void printToReport(boolean testResult, String testName, boolean exception) throws AWTException, IOException {
 		
@@ -96,7 +58,7 @@ public class zapGuitars_functions extends setUp {
 	public void returnToMainPage() throws InterruptedException {
 		
 		String currentPageTitle = driver.getTitle();
-		String mainPageTitle = "æàô äùååàú îçéøéí";
+		String mainPageTitle = "×–××¤ ×”×©×•×•××ª ×ž×—×™×¨×™×";
 		
 		if (!currentPageTitle.equalsIgnoreCase(mainPageTitle)) {
 			driver.navigate().to("https://www.zap.co.il/");
@@ -112,7 +74,6 @@ public class zapGuitars_functions extends setUp {
 		if (target.equalsIgnoreCase("_blank")) {
 			clickOnElement(link);
 			
-//			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			tabs = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs.get(1));
 			
@@ -186,12 +147,9 @@ public class zapGuitars_functions extends setUp {
 		Thread.sleep(3000);
 	}
 	
-	public void pressEnter(/*Robot robot*/ WebElement element) {
+	public void pressEnter( WebElement element) throws InterruptedException {
 		action.sendKeys(Keys.RETURN).build().perform();
-		
-//		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.keyRelease(KeyEvent.VK_ENTER);
-//		robot.delay(1000);	
+		Thread.sleep(2000);
 	}
 	
 	public boolean checkPageTitle(String expectedPageTitle) {		
@@ -348,12 +306,22 @@ public class zapGuitars_functions extends setUp {
 		
 		try {
 			clickOnElement(pof.multiSelectManufacturerButton);		// opening multiple choice by manufacturer window, if not already open
-//			return isMultiWindowOpen();
 		} catch (NoSuchElementException e) {
-//			return true;
 		} catch (ElementClickInterceptedException e) {
-//			return true;
 		} 
+	}
+	
+	public boolean multiWindowSingleChoiceDisplay() throws InterruptedException {
+		
+	/* validating single choice display by trying to click on one checkbox  */
+		boolean bool;
+		try {																	
+			clickOnElement(pof.yamahaCheckbox);
+			bool = false;
+		} catch (NoSuchElementException | ElementNotInteractableException e) {
+			bool = true;
+		}
+		return bool;
 	}
 	
 	public int listAlphabeticalOrderCount(List<String> listToCheck) {
@@ -380,9 +348,7 @@ public class zapGuitars_functions extends setUp {
 					}
 				}
 			}
-			return counter;
-//			boolean result = (counter == expectedCharsSum) ? true : false;
-//			return result;			
+			return counter;			
 	}
 	
 	public static boolean isListInNumericalOrder(List<Integer> numList, int expectedCount) {

@@ -15,8 +15,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.print.attribute.standard.PrinterMoreInfoManufacturer;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,14 +39,54 @@ public class multiChoiceWindow extends setUp {
 	static List<String> resultsStringList;
 	static boolean isListCorrectThreeItems;
 	
+	@Test (priority = 1)
+	  public void MoreManufacturer() throws AWTException, IOException {
+		  
+		  testName = "Open multiple choice window in single choice mode";
+		  
+		  try {
+			  isConditionTrue = func.isMultiWindowOpen(); 			// checking if multiple choice window is open, if open - close it
+				if (isConditionTrue) {
+					func.clickOnElement(pof.closeMultiWindow);
+					Thread.sleep(1000);
+					isConditionTrue = func.isMultiWindowOpen();
+				}
+			  
+			  	if (!isConditionTrue) {
+					func.clickOnElement(pof.moreManufacturer);
+					Thread.sleep(1000);
+				}
+			isConditionTrue = func.multiWindowSingleChoiceDisplay();
+				
+			if (isConditionTrue) {
+				func.printToReport(true, testName, false);				
+				Assert.assertEquals(isConditionTrue, true, "Not single choice");			
+			} else {
+				func.printToReport(false, testName, false);
+				Assert.assertEquals(true, false, "Not single choice");
+			}		
+				
+		} catch (Exception e) {
+			 func.printToReport(isConditionTrue, testName, true);
+			 e.printStackTrace();
+			 Assert.assertEquals(false, true, "An exception occured");
+		}
+	  }
 	
-  @Test (priority = 1, enabled = true)
+	
+  @Test (priority = 2, enabled = true)
   public void openMultiChoiceWindow() throws AWTException, IOException {
 	  
 	  testName = "Opening multiple choice manufacturer window";
 	  
 	 try {	  
-		 isConditionTrue = func.isMultiWindowOpen();  			// checking if multiple choice window is open
+		 isConditionTrue = func.isMultiWindowOpen(); 			// checking if multiple choice window is open, if open - close it
+			if (isConditionTrue) {
+				func.clickOnElement(pof.closeMultiWindow);
+				Thread.sleep(1000);
+				isConditionTrue = func.isMultiWindowOpen();
+			}
+		 
 			if (!isConditionTrue) {
 				func.openMultiWindow();
 				Thread.sleep(1000);
@@ -65,26 +108,28 @@ public class multiChoiceWindow extends setUp {
 	}
   }
   
-  @Test (priority = 2, enabled = true)
+  
+  @Test (priority = 3, enabled = true)
   public void chooseOneFilter() throws AWTException, IOException {
 	  
-	  testName = "Single choice in multiple choice window";
+	  testName = "Switch to single choice in multiple choice window";
 	  
 	  try {
-		func.clickOnElement(pof.oneChoiceButtton);
-		
 		isConditionTrue = func.isMultiWindowOpen();
 			if (!isConditionTrue) {
 				func.openMultiWindow();
 				Thread.sleep(1000);
 			}
+			
+		func.clickOnElement(pof.oneChoiceButtton);
+		isConditionTrue = func.multiWindowSingleChoiceDisplay();	
 		
 		if (isConditionTrue) {
 			func.printToReport(true, testName, false);				
-			Assert.assertEquals(isConditionTrue, true, "Not multiple choice");			
+			Assert.assertEquals(isConditionTrue, true, "Not single choice");			
 		} else {
 			func.printToReport(false, testName, false);
-			Assert.assertEquals(true, false, "Not multiple choice");
+			Assert.assertEquals(true, false, "Not single choice");
 		}		
 		
 	  } catch (Exception e) {
@@ -93,7 +138,7 @@ public class multiChoiceWindow extends setUp {
 		  Assert.assertEquals(false, true, "An exception occured");
 	  }
   }
-  @Test (priority = 3, dependsOnMethods = "chooseOneFilter", enabled = true)
+  @Test (priority = 4, dependsOnMethods = "chooseOneFilter", enabled = true)
   public void oneFilterOnly() {
 	  
 	  try {
@@ -106,7 +151,7 @@ public class multiChoiceWindow extends setUp {
 	  }
   }
   
-  @Test (priority = 4, enabled = true)
+  @Test (priority = 5, enabled = true)
   public void alphabeticalOrder() throws AWTException, IOException {
 	  
 	  testName = "Alphabetical order test";
@@ -142,8 +187,7 @@ public class multiChoiceWindow extends setUp {
 		
 		isConditionTrue = func.compareStringOrInt(null, null, currentListCount, expectedListCount);		// comparing current and expected, if equal returns true
 		
-		func.printToReport(isConditionTrue, testName, false);
-		
+		func.printToReport(isConditionTrue, testName, false);		
 		Assert.assertEquals(isConditionTrue, true, "Not in alphabetical order");
 		
 	} catch (Exception e) {
@@ -154,7 +198,7 @@ public class multiChoiceWindow extends setUp {
 	  
   }
   
-  @Test (priority = 5, enabled = true)
+  @Test (priority = 6, enabled = true)
   public void numericalOrder() throws AWTException, IOException {
 	  
 	  testName = "Quantities numerical order test";
@@ -185,7 +229,7 @@ public class multiChoiceWindow extends setUp {
 	}
   }
   
-  @Test (priority = 6)
+  @Test (priority = 7)
   public void checkingBoxes() throws AWTException, IOException {
 	  
 	  testName = "Checkboxes results test";
@@ -197,8 +241,7 @@ public class multiChoiceWindow extends setUp {
 				func.openMultiWindow();
 				Thread.sleep(1000);
 			}
-		
-				
+					
 		func.checkTheBox(true, pof.yamahaCheckbox);
 		func.checkTheBox(true, pof.fenderCheckbox);
 		func.checkTheBox(true, pof.takamineCheckbox);
