@@ -6,16 +6,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import tools.setUp;
 import tools.zapMainPageID;
 import tools.zapGuitars_POF;
-import tools.zapMainPageID;
-
 import org.testng.annotations.BeforeClass;
 
 import java.awt.AWTException;
-import java.awt.Robot;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;

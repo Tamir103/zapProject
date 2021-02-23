@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import tools.setUp;
 import tools.zapGuitars_POF;
-import tools.Elements;
-
 import org.testng.annotations.BeforeClass;
 
 import java.awt.AWTException;
@@ -19,10 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 

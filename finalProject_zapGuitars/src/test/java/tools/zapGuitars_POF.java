@@ -5,8 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import finalProject_zapGuitars.multiChoiceWindow;
-
 public class zapGuitars_POF {
 	
 

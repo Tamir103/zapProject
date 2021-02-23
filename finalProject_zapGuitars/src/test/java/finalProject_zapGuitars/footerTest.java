@@ -9,24 +9,14 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import tools.setUp;
 import tools.zapMainPageID;
-import tools.Elements;
-
 import org.testng.annotations.BeforeClass;
-
-import static org.testng.Assert.assertEquals;
 
 import java.awt.AWTException;
 import java.io.IOException;
-import java.util.ArrayList;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterGroups;
-import org.testng.annotations.AfterMethod;
 
 
 public class footerTest extends setUp {

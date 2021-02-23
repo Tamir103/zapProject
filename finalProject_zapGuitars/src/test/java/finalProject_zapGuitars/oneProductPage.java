@@ -4,15 +4,12 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import tools.setUp;
-import tools.Elements;
 import tools.zapGuitars_POF;
 
 import org.testng.annotations.BeforeClass;
 
 import java.awt.AWTException;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;

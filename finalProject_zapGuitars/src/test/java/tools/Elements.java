@@ -3,8 +3,6 @@ package tools;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
