@@ -6,7 +6,7 @@ import java.util.List;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
-public class Elements extends setUp {
+public class repeatedTests extends setUp {
 
 	static boolean isFilterOn;
 	static String expected;
@@ -16,7 +16,7 @@ public class Elements extends setUp {
 	static List<String> resultsStringList;
 	static boolean isListCorrect;
 	
-	public void yamahaFilterTest() throws AWTException, IOException {
+	public static void yamahaFilterTest() throws AWTException, IOException {
 		
 	testName = "Yamaha manufacturer filter";
 	expected = "Yamaha";

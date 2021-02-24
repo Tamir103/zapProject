@@ -3,6 +3,7 @@ package finalProject_zapGuitars;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import tools.repeatedTests;
 import tools.setUp;
 import tools.zapGuitars_POF;
 
@@ -137,7 +138,7 @@ public class multiChoiceWindow extends setUp {
 	  try {
 		func.clickOnElement(pof.yamahaSingleChoice);
 		
-		elements.yamahaFilterTest();        // method that is used in more than one test class, also prints to report
+		repeatedTests.yamahaFilterTest();        // method that is used in more than one test class, also prints to report
 		
 	  } catch (Exception e) {
 		e.printStackTrace();

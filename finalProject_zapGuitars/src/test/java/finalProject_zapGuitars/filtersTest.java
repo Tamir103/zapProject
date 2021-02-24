@@ -7,6 +7,7 @@ package finalProject_zapGuitars;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import tools.repeatedTests;
 import tools.setUp;
 import tools.zapGuitars_POF;
 import org.testng.annotations.BeforeClass;
@@ -33,7 +34,7 @@ public class filtersTest extends setUp {
 	@Test (priority = 1, enabled = true)
   public static void yamahaFilter() throws InterruptedException, AWTException, IOException {
 	  
-		elements.yamahaFilterTest();       // method that is used in more than one test class, also prints to report
+		repeatedTests.yamahaFilterTest();       // method that is used in more than one test class, also prints to report
   }
   
   @Test (priority = 2)
