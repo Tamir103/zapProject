@@ -30,7 +30,7 @@ public class repeatedTests extends setUp {
 		numOfResults = func.getNumOfSearchResultsInt();								// getting the number of results and converting it to int
 		filters = pof.filterButtonsBanner.getText();  								// getting filter text
 		
-		if (filters != null) {														// if filter exist
+		if (filters != null) {												   		// if filter exist
 			isFilterOn = func.compareStringOrInt(filters, expected, 0, 0);			// is filter contains correct filtering string, 0 because not comparing ints			
 			resultsStringList = func.getResultsStringList(pof.numOfResultsList);	// getting filtered results list as strings
 			isListCorrect = func.isListCorrectOneItem(resultsStringList, expected);						// checking if all results containing key string
