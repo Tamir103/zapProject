@@ -464,23 +464,14 @@ public class footerTest extends appSettings {
   
   @BeforeClass
   public void beforeClass() {
-	  
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	  driver.get("https://www.zap.co.il/");
-	  driver.manage().window().maximize();
-	  
-	//sampling all the web elements from mainPageID class, if web page is refreshed all samples needs to be sampled again		
-	  mainPageID = PageFactory.initElements(driver, zapMainPageID.class);
-
-	  extent = exm.getExtentReports();
-	  test = exm.createTest("Footer Links Test", "Footer Links Test");
+	  destinationURL = "https://www.zap.co.il/";
+	  extentTestName = "Footer Test";
+	  func.startTest(destinationURL, extentTestName);
   }
 
   @AfterClass
   public void afterClass() {
-	  driver.close();
-	  extent.flush();
+	  func.endTest();
   }
 
 }

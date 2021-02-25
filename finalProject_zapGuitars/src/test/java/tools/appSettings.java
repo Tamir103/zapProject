@@ -21,7 +21,9 @@ public class appSettings {
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	public static ExtentManager exm = new ExtentManager(driver);
+	public static String extentTestName;
 	
+	public static String destinationURL;
 	public static String testName;
 	public static String expected;
 }

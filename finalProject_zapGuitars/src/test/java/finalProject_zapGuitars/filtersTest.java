@@ -136,23 +136,16 @@ public class filtersTest extends appSettings {
   
   @BeforeClass
   public void beforeClass() throws InterruptedException {
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	  driver.get("https://www.zap.co.il/models.aspx?sog=g-guitar");
-	  driver.manage().window().maximize();
-	  
-	  pof = PageFactory.initElements(driver, zapGuitars_POF.class);
-	  
-	  extent = exm.getExtentReports();
-	  test = exm.createTest("Filters test", "Filters test");
+	  destinationURL = "https://www.zap.co.il/models.aspx?sog=g-guitar";
+	  extentTestName = "Filters Test"; 
+	  func.startTest(destinationURL, extentTestName);
 	  
 	  resultsStringList = new ArrayList<String>();
   }
 
   @AfterClass
   public void afterClass() {
-	  driver.close();
-	  extent.flush();
+	  func.endTest();
   }
 
 }

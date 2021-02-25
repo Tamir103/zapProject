@@ -5,9 +5,16 @@
     <classes>
       <class name="finalProject_zapGuitars.navigateToGuitars">
         <methods>
+          <include name="searchBox_guitar_enter"/>
           <include name="sideSportAndLeisure"/>
+          <include name="searchBox_guitar_searchbutton"/>
+          <include name="mainSportAndLeisure"/>
           <include name="sideMenuMorebutton"/>
+          <include name="searchBox_guitars_searchbutton"/>
+          <include name="allCategoriesPage"/>
           <include name="afterClass"/>
+          <include name="searchBox_guitars_enter"/>
+          <include name="allCategories"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- finalProject_zapGuitars.navigateToGuitars -->

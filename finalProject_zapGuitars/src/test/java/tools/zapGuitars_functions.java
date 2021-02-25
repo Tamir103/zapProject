@@ -15,8 +15,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class zapGuitars_functions extends appSettings {
@@ -25,6 +30,27 @@ public class zapGuitars_functions extends appSettings {
 	static List<String> falseStrings = new ArrayList<String>();
 	static ArrayList<Boolean> booleanList = new ArrayList<Boolean>();
 
+	public void startTest(String destinationURL, String extentTestName) {
+		 WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		 driver.get(destinationURL);
+		 driver.manage().window().maximize();
+		  
+		 pof = PageFactory.initElements(driver, zapGuitars_POF.class);
+		 mainPageID = PageFactory.initElements(driver, zapMainPageID.class); 
+		 
+		 extent = exm.getExtentReports();
+		 test = exm.createTest(extentTestName, extentTestName);
+		 
+		 action = new Actions(driver);
+	}
+	
+	public void endTest() {
+		 driver.close();
+		 extent.flush();
+	}
+	
+	
 	public void printToReport(boolean testResult, String testName, boolean exception) throws AWTException, IOException {
 		
 		if (!exception) {

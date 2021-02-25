@@ -223,20 +223,9 @@ public class navigateToGuitars extends appSettings {
   
   @BeforeClass
   public void beforeClass() throws AWTException {
-	  
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	  driver.get("https://www.zap.co.il/");
-	  driver.manage().window().maximize();
-	  
-	  action = new Actions(driver);
-	  
-	//sampling all the elements from zapMainPageID class, if web page is refreshed all samples needs to be sampled again		
-	  mainPageID = PageFactory.initElements(driver, zapMainPageID.class);
-	  pof = PageFactory.initElements(driver, zapGuitars_POF.class);
-	
-	  extent = exm.getExtentReports();
-	  test = exm.createTest("Navigating to guitars page test", "Navigating to guitars page test");
+	  destinationURL = "https://www.zap.co.il/";
+	  extentTestName = "Navigating to guitars page test";
+	  func.startTest(destinationURL, extentTestName);
   }
 
   @AfterClass

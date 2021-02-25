@@ -270,15 +270,9 @@ public class multiChoiceWindow extends appSettings {
   
   @BeforeClass
   public void beforeClass() throws InterruptedException {
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	  driver.get("https://www.zap.co.il/models.aspx?sog=g-guitar");
-	  driver.manage().window().maximize();
-	  
-	  pof = PageFactory.initElements(driver, zapGuitars_POF.class);
-	  
-	  extent = exm.getExtentReports();
-	  test = exm.createTest("Multiple choice filter window test", "Multiple choice filter window test");
+	  destinationURL = "https://www.zap.co.il/models.aspx?sog=g-guitar";
+	  extentTestName = "Multiple choice filter window test";
+	  func.startTest(destinationURL, extentTestName);
 	  
 	  multiChoiceItemsList = new ArrayList<String>();
 	  multiChoiceQuantityList = new ArrayList<Integer>();
@@ -286,8 +280,7 @@ public class multiChoiceWindow extends appSettings {
 
   @AfterClass
   public void afterClass() {
-	  driver.close();
-	  extent.flush();
+	  func.endTest();
   }
 
 }

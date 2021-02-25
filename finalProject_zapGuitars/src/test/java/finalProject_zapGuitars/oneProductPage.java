@@ -161,22 +161,14 @@ public class oneProductPage extends appSettings {
   
   @BeforeClass
   public void beforeClass() {
-	  
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	  driver.get("https://www.zap.co.il/models.aspx?sog=g-guitar");
-	  driver.manage().window().maximize();
-	  
-	  pof = PageFactory.initElements(driver, zapGuitars_POF.class);
-	  
-	  extent = exm.getExtentReports();
-	  test = exm.createTest("One product page test", "One product page test");
+	  destinationURL = "https://www.zap.co.il/models.aspx?sog=g-guitar";
+	  extentTestName = "One product page test";
+	  func.startTest(destinationURL, extentTestName);
   }
 
   @AfterClass
   public void afterClass() {
-	  driver.close();
-	  extent.flush();
+	  func.endTest();
   }
 
 }
