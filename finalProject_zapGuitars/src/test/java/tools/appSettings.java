@@ -8,11 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-public class setUp {
+public class appSettings {
 
 	public static WebDriver driver;
 	public static zapGuitars_functions func = new zapGuitars_functions();
-	public static Elements elements = new Elements();
+	public static repeatedTests repeatedTests = new repeatedTests();
 	public static zapGuitars_POF pof = new zapGuitars_POF();
 	public static zapMainPageID mainPageID = new zapMainPageID();
 	public static Actions action;

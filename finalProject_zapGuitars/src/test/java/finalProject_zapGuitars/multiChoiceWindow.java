@@ -3,8 +3,8 @@ package finalProject_zapGuitars;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import tools.appSettings;
 import tools.repeatedTests;
-import tools.setUp;
 import tools.zapGuitars_POF;
 
 import org.testng.annotations.BeforeClass;
@@ -21,7 +21,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class multiChoiceWindow extends setUp {
+public class multiChoiceWindow extends appSettings {
 	
 	static boolean isConditionTrue;
 	static List<String> multiChoiceItemsList;

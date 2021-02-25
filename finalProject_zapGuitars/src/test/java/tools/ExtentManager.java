@@ -24,7 +24,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentManager extends setUp {
+public class ExtentManager extends appSettings {
 
 	public static WebDriver driver;
 	

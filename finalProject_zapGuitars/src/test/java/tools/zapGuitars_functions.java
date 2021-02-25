@@ -19,7 +19,7 @@ import org.openqa.selenium.WebElement;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
 
-public class zapGuitars_functions extends setUp {
+public class zapGuitars_functions extends appSettings {
 	
 	static ArrayList<String> tabs;
 	static List<String> falseStrings = new ArrayList<String>();

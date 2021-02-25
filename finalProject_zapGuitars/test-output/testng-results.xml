@@ -2,113 +2,113 @@
 <testng-results ignored="0" total="48" passed="45" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-23T10:03:59 IST" name="Suite" finished-at="2021-02-23T10:14:33 IST" duration-ms="633538">
+  <suite started-at="2021-02-25T15:03:58 IST" name="Suite" finished-at="2021-02-25T15:13:50 IST" duration-ms="591730">
     <groups>
       <group name="content world">
-        <method signature="footerTest.dailyDealsLink()[pri:18, instance:finalProject_zapGuitars.footerTest@2473d930]" name="dailyDealsLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.supermarketLink()[pri:17, instance:finalProject_zapGuitars.footerTest@2473d930]" name="supermarketLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.tavoLink()[pri:19, instance:finalProject_zapGuitars.footerTest@2473d930]" name="tavoLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.tourismLink()[pri:16, instance:finalProject_zapGuitars.footerTest@2473d930]" name="tourismLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.wisebuyLink()[pri:20, instance:finalProject_zapGuitars.footerTest@2473d930]" name="wisebuyLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.zap360Link()[pri:21, instance:finalProject_zapGuitars.footerTest@2473d930]" name="zap360Link" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.dailyDealsLink()[pri:18, instance:finalProject_zapGuitars.footerTest@3c419631]" name="dailyDealsLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.supermarketLink()[pri:17, instance:finalProject_zapGuitars.footerTest@3c419631]" name="supermarketLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.tavoLink()[pri:19, instance:finalProject_zapGuitars.footerTest@3c419631]" name="tavoLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.tourismLink()[pri:16, instance:finalProject_zapGuitars.footerTest@3c419631]" name="tourismLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.wisebuyLink()[pri:20, instance:finalProject_zapGuitars.footerTest@3c419631]" name="wisebuyLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.zap360Link()[pri:21, instance:finalProject_zapGuitars.footerTest@3c419631]" name="zap360Link" class="finalProject_zapGuitars.footerTest"/>
       </group> <!-- content world -->
       <group name="about">
-        <method signature="footerTest.aboutLinkTest()[pri:1, instance:finalProject_zapGuitars.footerTest@2473d930]" name="aboutLinkTest" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.contactLink()[pri:4, instance:finalProject_zapGuitars.footerTest@2473d930]" name="contactLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.personalAreaLink()[pri:3, instance:finalProject_zapGuitars.footerTest@2473d930]" name="personalAreaLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.termsLink()[pri:2, instance:finalProject_zapGuitars.footerTest@2473d930]" name="termsLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.aboutLinkTest()[pri:1, instance:finalProject_zapGuitars.footerTest@3c419631]" name="aboutLinkTest" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.contactLink()[pri:4, instance:finalProject_zapGuitars.footerTest@3c419631]" name="contactLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.personalAreaLink()[pri:3, instance:finalProject_zapGuitars.footerTest@3c419631]" name="personalAreaLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.termsLink()[pri:2, instance:finalProject_zapGuitars.footerTest@3c419631]" name="termsLink" class="finalProject_zapGuitars.footerTest"/>
       </group> <!-- about -->
       <group name="menus">
-        <method signature="navigateToGuitars.allCategories()[pri:5, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="allCategories" class="finalProject_zapGuitars.navigateToGuitars"/>
-        <method signature="navigateToGuitars.mainSportAndLeisure()[pri:6, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="mainSportAndLeisure" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.allCategories()[pri:5, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="allCategories" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.mainSportAndLeisure()[pri:6, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="mainSportAndLeisure" class="finalProject_zapGuitars.navigateToGuitars"/>
       </group> <!-- menus -->
       <group name="advertising">
-        <method signature="footerTest.adInterfaceLink()[pri:15, instance:finalProject_zapGuitars.footerTest@2473d930]" name="adInterfaceLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.adLink()[pri:13, instance:finalProject_zapGuitars.footerTest@2473d930]" name="adLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.addYourShopLink()[pri:12, instance:finalProject_zapGuitars.footerTest@2473d930]" name="addYourShopLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.shopsAndImportsLink()[pri:14, instance:finalProject_zapGuitars.footerTest@2473d930]" name="shopsAndImportsLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.adInterfaceLink()[pri:15, instance:finalProject_zapGuitars.footerTest@3c419631]" name="adInterfaceLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.adLink()[pri:13, instance:finalProject_zapGuitars.footerTest@3c419631]" name="adLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.addYourShopLink()[pri:12, instance:finalProject_zapGuitars.footerTest@3c419631]" name="addYourShopLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.shopsAndImportsLink()[pri:14, instance:finalProject_zapGuitars.footerTest@3c419631]" name="shopsAndImportsLink" class="finalProject_zapGuitars.footerTest"/>
       </group> <!-- advertising -->
       <group name="useful info">
-        <method signature="footerTest.QnALink()[pri:5, instance:finalProject_zapGuitars.footerTest@2473d930]" name="QnALink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.allCategoriesLink()[pri:8, instance:finalProject_zapGuitars.footerTest@2473d930]" name="allCategoriesLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.logInLink()[pri:10, instance:finalProject_zapGuitars.footerTest@2473d930]" name="logInLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.priceDropLink()[pri:7, instance:finalProject_zapGuitars.footerTest@2473d930]" name="priceDropLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.reviewsLink()[pri:9, instance:finalProject_zapGuitars.footerTest@2473d930]" name="reviewsLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.shopGuideLink()[pri:6, instance:finalProject_zapGuitars.footerTest@2473d930]" name="shopGuideLink" class="finalProject_zapGuitars.footerTest"/>
-        <method signature="footerTest.shopingILLink()[pri:11, instance:finalProject_zapGuitars.footerTest@2473d930]" name="shopingILLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.QnALink()[pri:5, instance:finalProject_zapGuitars.footerTest@3c419631]" name="QnALink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.allCategoriesLink()[pri:8, instance:finalProject_zapGuitars.footerTest@3c419631]" name="allCategoriesLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.logInLink()[pri:10, instance:finalProject_zapGuitars.footerTest@3c419631]" name="logInLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.priceDropLink()[pri:7, instance:finalProject_zapGuitars.footerTest@3c419631]" name="priceDropLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.reviewsLink()[pri:9, instance:finalProject_zapGuitars.footerTest@3c419631]" name="reviewsLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.shopGuideLink()[pri:6, instance:finalProject_zapGuitars.footerTest@3c419631]" name="shopGuideLink" class="finalProject_zapGuitars.footerTest"/>
+        <method signature="footerTest.shopingILLink()[pri:11, instance:finalProject_zapGuitars.footerTest@3c419631]" name="shopingILLink" class="finalProject_zapGuitars.footerTest"/>
       </group> <!-- useful info -->
       <group name="search box">
-        <method signature="navigateToGuitars.searchBox_guitar_enter()[pri:2, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="searchBox_guitar_enter" class="finalProject_zapGuitars.navigateToGuitars"/>
-        <method signature="navigateToGuitars.searchBox_guitars_enter()[pri:4, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="searchBox_guitars_enter" class="finalProject_zapGuitars.navigateToGuitars"/>
-        <method signature="navigateToGuitars.searchBox_guitars_searchbutton()[pri:3, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="searchBox_guitars_searchbutton" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.searchBox_guitar_enter()[pri:2, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="searchBox_guitar_enter" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.searchBox_guitars_enter()[pri:4, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="searchBox_guitars_enter" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.searchBox_guitars_searchbutton()[pri:3, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="searchBox_guitars_searchbutton" class="finalProject_zapGuitars.navigateToGuitars"/>
       </group> <!-- search box -->
       <group name="search_box">
-        <method signature="navigateToGuitars.searchBox_guitar_searchbutton()[pri:1, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" name="searchBox_guitar_searchbutton" class="finalProject_zapGuitars.navigateToGuitars"/>
+        <method signature="navigateToGuitars.searchBox_guitar_searchbutton()[pri:1, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" name="searchBox_guitar_searchbutton" class="finalProject_zapGuitars.navigateToGuitars"/>
       </group> <!-- search_box -->
     </groups>
-    <test started-at="2021-02-23T10:03:59 IST" name="zapTests" finished-at="2021-02-23T10:14:33 IST" duration-ms="633538">
+    <test started-at="2021-02-25T15:03:58 IST" name="zapTests" finished-at="2021-02-25T15:13:50 IST" duration-ms="591730">
       <class name="finalProject_zapGuitars.footerTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:03:59 IST" name="beforeClass" finished-at="2021-02-23T10:04:06 IST" duration-ms="6660" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:03:58 IST" name="beforeClass" finished-at="2021-02-25T15:04:05 IST" duration-ms="6928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="aboutLinkTest()[pri:1, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:06 IST" name="aboutLinkTest" finished-at="2021-02-23T10:04:12 IST" duration-ms="6004" status="PASS">
+        <test-method signature="aboutLinkTest()[pri:1, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:05 IST" name="aboutLinkTest" finished-at="2021-02-25T15:04:12 IST" duration-ms="6846" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aboutLinkTest -->
-        <test-method signature="termsLink()[pri:2, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:12 IST" name="termsLink" finished-at="2021-02-23T10:04:19 IST" duration-ms="6626" status="PASS">
+        <test-method signature="termsLink()[pri:2, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:12 IST" name="termsLink" finished-at="2021-02-25T15:04:19 IST" duration-ms="7436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- termsLink -->
-        <test-method signature="personalAreaLink()[pri:3, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:19 IST" name="personalAreaLink" finished-at="2021-02-23T10:04:30 IST" duration-ms="11081" status="PASS">
+        <test-method signature="personalAreaLink()[pri:3, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:19 IST" name="personalAreaLink" finished-at="2021-02-25T15:04:26 IST" duration-ms="7210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- personalAreaLink -->
-        <test-method signature="contactLink()[pri:4, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:30 IST" name="contactLink" finished-at="2021-02-23T10:04:42 IST" duration-ms="12139" status="PASS">
+        <test-method signature="contactLink()[pri:4, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:26 IST" name="contactLink" finished-at="2021-02-25T15:04:34 IST" duration-ms="8021" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contactLink -->
-        <test-method signature="QnALink()[pri:5, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:42 IST" name="QnALink" finished-at="2021-02-23T10:04:49 IST" duration-ms="7404" status="PASS">
+        <test-method signature="QnALink()[pri:5, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:34 IST" name="QnALink" finished-at="2021-02-25T15:04:42 IST" duration-ms="7182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QnALink -->
-        <test-method signature="shopGuideLink()[pri:6, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:49 IST" name="shopGuideLink" finished-at="2021-02-23T10:04:57 IST" duration-ms="7799" status="PASS">
+        <test-method signature="shopGuideLink()[pri:6, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:42 IST" name="shopGuideLink" finished-at="2021-02-25T15:04:50 IST" duration-ms="8184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopGuideLink -->
-        <test-method signature="priceDropLink()[pri:7, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:04:57 IST" name="priceDropLink" finished-at="2021-02-23T10:05:05 IST" duration-ms="7743" status="PASS">
+        <test-method signature="priceDropLink()[pri:7, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:50 IST" name="priceDropLink" finished-at="2021-02-25T15:04:58 IST" duration-ms="8231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- priceDropLink -->
-        <test-method signature="allCategoriesLink()[pri:8, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:05 IST" name="allCategoriesLink" finished-at="2021-02-23T10:05:11 IST" duration-ms="6671" status="PASS">
+        <test-method signature="allCategoriesLink()[pri:8, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:04:58 IST" name="allCategoriesLink" finished-at="2021-02-25T15:05:05 IST" duration-ms="6929" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allCategoriesLink -->
-        <test-method signature="reviewsLink()[pri:9, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:11 IST" name="reviewsLink" finished-at="2021-02-23T10:05:18 IST" duration-ms="6390" status="PASS">
+        <test-method signature="reviewsLink()[pri:9, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:05 IST" name="reviewsLink" finished-at="2021-02-25T15:05:13 IST" duration-ms="7725" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reviewsLink -->
-        <test-method signature="logInLink()[pri:10, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:18 IST" name="logInLink" finished-at="2021-02-23T10:05:24 IST" duration-ms="6302" status="PASS">
+        <test-method signature="logInLink()[pri:10, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:13 IST" name="logInLink" finished-at="2021-02-25T15:05:19 IST" duration-ms="6545" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logInLink -->
-        <test-method signature="shopingILLink()[pri:11, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:24 IST" name="shopingILLink" finished-at="2021-02-23T10:05:32 IST" duration-ms="7430" status="PASS">
+        <test-method signature="shopingILLink()[pri:11, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:19 IST" name="shopingILLink" finished-at="2021-02-25T15:05:26 IST" duration-ms="6849" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopingILLink -->
-        <test-method signature="addYourShopLink()[pri:12, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:32 IST" name="addYourShopLink" finished-at="2021-02-23T10:05:39 IST" duration-ms="7681" status="PASS">
+        <test-method signature="addYourShopLink()[pri:12, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:26 IST" name="addYourShopLink" finished-at="2021-02-25T15:05:33 IST" duration-ms="6585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addYourShopLink -->
-        <test-method signature="adLink()[pri:13, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:39 IST" name="adLink" finished-at="2021-02-23T10:05:46 IST" duration-ms="6636" status="PASS">
+        <test-method signature="adLink()[pri:13, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:33 IST" name="adLink" finished-at="2021-02-25T15:05:40 IST" duration-ms="7191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adLink -->
-        <test-method signature="shopsAndImportsLink()[pri:14, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:46 IST" name="shopsAndImportsLink" finished-at="2021-02-23T10:05:51 IST" duration-ms="5361" status="PASS">
+        <test-method signature="shopsAndImportsLink()[pri:14, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:40 IST" name="shopsAndImportsLink" finished-at="2021-02-25T15:05:45 IST" duration-ms="5310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopsAndImportsLink -->
-        <test-method signature="adInterfaceLink()[pri:15, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:51 IST" name="adInterfaceLink" finished-at="2021-02-23T10:05:59 IST" duration-ms="7466" status="FAIL">
+        <test-method signature="adInterfaceLink()[pri:15, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:45 IST" name="adInterfaceLink" finished-at="2021-02-25T15:05:53 IST" duration-ms="7544" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Advertising interface Link title incorrect expected [true] but found [false]]]>
@@ -154,19 +154,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adInterfaceLink -->
-        <test-method signature="tourismLink()[pri:16, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:05:59 IST" name="tourismLink" finished-at="2021-02-23T10:06:08 IST" duration-ms="9090" status="PASS">
+        <test-method signature="tourismLink()[pri:16, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:05:53 IST" name="tourismLink" finished-at="2021-02-25T15:06:00 IST" duration-ms="7616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tourismLink -->
-        <test-method signature="supermarketLink()[pri:17, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:08 IST" name="supermarketLink" finished-at="2021-02-23T10:06:21 IST" duration-ms="13020" status="PASS">
+        <test-method signature="supermarketLink()[pri:17, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:00 IST" name="supermarketLink" finished-at="2021-02-25T15:06:09 IST" duration-ms="8824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- supermarketLink -->
-        <test-method signature="dailyDealsLink()[pri:18, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:21 IST" name="dailyDealsLink" finished-at="2021-02-23T10:06:29 IST" duration-ms="7800" status="PASS">
+        <test-method signature="dailyDealsLink()[pri:18, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:09 IST" name="dailyDealsLink" finished-at="2021-02-25T15:06:16 IST" duration-ms="7366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dailyDealsLink -->
-        <test-method signature="tavoLink()[pri:19, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:29 IST" name="tavoLink" finished-at="2021-02-23T10:06:39 IST" duration-ms="9993" status="FAIL">
+        <test-method signature="tavoLink()[pri:19, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:16 IST" name="tavoLink" finished-at="2021-02-25T15:06:24 IST" duration-ms="7833" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Tavo Link title incorrect expected [true] but found [false]]]>
@@ -212,133 +212,133 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tavoLink -->
-        <test-method signature="wisebuyLink()[pri:20, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:39 IST" name="wisebuyLink" finished-at="2021-02-23T10:06:50 IST" duration-ms="11125" status="PASS">
+        <test-method signature="wisebuyLink()[pri:20, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:24 IST" name="wisebuyLink" finished-at="2021-02-25T15:06:33 IST" duration-ms="8472" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wisebuyLink -->
-        <test-method signature="zap360Link()[pri:21, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:50 IST" name="zap360Link" finished-at="2021-02-23T10:06:59 IST" duration-ms="9303" status="PASS">
+        <test-method signature="zap360Link()[pri:21, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:33 IST" name="zap360Link" finished-at="2021-02-25T15:06:42 IST" duration-ms="9421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- zap360Link -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.footerTest@2473d930]" started-at="2021-02-23T10:06:59 IST" name="afterClass" finished-at="2021-02-23T10:07:03 IST" duration-ms="4345" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.footerTest@3c419631]" started-at="2021-02-25T15:06:42 IST" name="afterClass" finished-at="2021-02-25T15:06:47 IST" duration-ms="4360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- finalProject_zapGuitars.footerTest -->
       <class name="finalProject_zapGuitars.oneProductPage">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:08:54 IST" name="beforeClass" finished-at="2021-02-23T10:09:00 IST" duration-ms="6342" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:27 IST" name="beforeClass" finished-at="2021-02-25T15:08:33 IST" duration-ms="5634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="productHeadlineLink()[pri:1, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:00 IST" name="productHeadlineLink" finished-at="2021-02-23T10:09:07 IST" duration-ms="6883" status="PASS">
+        <test-method signature="productHeadlineLink()[pri:1, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:33 IST" name="productHeadlineLink" finished-at="2021-02-25T15:08:39 IST" duration-ms="6065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productHeadlineLink -->
-        <test-method signature="productMoreDetails()[pri:2, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:07 IST" name="productMoreDetails" finished-at="2021-02-23T10:09:13 IST" duration-ms="6303" status="PASS">
+        <test-method signature="productMoreDetails()[pri:2, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:39 IST" name="productMoreDetails" finished-at="2021-02-25T15:08:48 IST" duration-ms="9253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productMoreDetails -->
-        <test-method signature="productReviews()[pri:3, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:13 IST" name="productReviews" finished-at="2021-02-23T10:09:19 IST" duration-ms="6139" status="PASS">
+        <test-method signature="productReviews()[pri:3, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:48 IST" name="productReviews" finished-at="2021-02-25T15:08:53 IST" duration-ms="5058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productReviews -->
-        <test-method signature="productPriceComparison()[pri:4, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:19 IST" name="productPriceComparison" finished-at="2021-02-23T10:09:24 IST" duration-ms="4627" status="PASS">
+        <test-method signature="productPriceComparison()[pri:4, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:53 IST" name="productPriceComparison" finished-at="2021-02-25T15:08:57 IST" duration-ms="4041" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productPriceComparison -->
-        <test-method signature="localStore()[pri:5, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:24 IST" name="localStore" finished-at="2021-02-23T10:09:28 IST" depends-on-methods="finalProject_zapGuitars.oneProductPage.productPriceComparison" duration-ms="4496" status="PASS">
+        <test-method signature="localStore()[pri:5, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:08:57 IST" name="localStore" finished-at="2021-02-25T15:09:02 IST" depends-on-methods="finalProject_zapGuitars.oneProductPage.productPriceComparison" duration-ms="4398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- localStore -->
-        <test-method signature="techSpec()[pri:6, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:28 IST" name="techSpec" finished-at="2021-02-23T10:09:32 IST" duration-ms="3883" status="PASS">
+        <test-method signature="techSpec()[pri:6, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:09:02 IST" name="techSpec" finished-at="2021-02-25T15:09:06 IST" duration-ms="4375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- techSpec -->
-        <test-method signature="userReviews()[pri:7, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:32 IST" name="userReviews" finished-at="2021-02-23T10:09:37 IST" duration-ms="4156" status="PASS">
+        <test-method signature="userReviews()[pri:7, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:09:06 IST" name="userReviews" finished-at="2021-02-25T15:09:10 IST" duration-ms="3713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userReviews -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.oneProductPage@49b0b76]" started-at="2021-02-23T10:09:37 IST" name="afterClass" finished-at="2021-02-23T10:09:37 IST" duration-ms="189" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.oneProductPage@61230f6a]" started-at="2021-02-25T15:09:10 IST" name="afterClass" finished-at="2021-02-25T15:09:14 IST" duration-ms="4092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- finalProject_zapGuitars.oneProductPage -->
       <class name="finalProject_zapGuitars.navigateToGuitars">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:07:03 IST" name="beforeClass" finished-at="2021-02-23T10:07:13 IST" duration-ms="9185" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:06:47 IST" name="beforeClass" finished-at="2021-02-25T15:06:53 IST" duration-ms="5973" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="searchBox_guitar_searchbutton()[pri:1, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:07:13 IST" name="searchBox_guitar_searchbutton" finished-at="2021-02-23T10:07:27 IST" duration-ms="14871" status="PASS">
+        <test-method signature="searchBox_guitar_searchbutton()[pri:1, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:06:53 IST" name="searchBox_guitar_searchbutton" finished-at="2021-02-25T15:07:04 IST" duration-ms="11839" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchBox_guitar_searchbutton -->
-        <test-method signature="searchBox_guitar_enter()[pri:2, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:07:27 IST" name="searchBox_guitar_enter" finished-at="2021-02-23T10:07:39 IST" duration-ms="11654" status="PASS">
+        <test-method signature="searchBox_guitar_enter()[pri:2, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:04 IST" name="searchBox_guitar_enter" finished-at="2021-02-25T15:07:14 IST" duration-ms="9185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchBox_guitar_enter -->
-        <test-method signature="searchBox_guitars_searchbutton()[pri:3, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:07:39 IST" name="searchBox_guitars_searchbutton" finished-at="2021-02-23T10:07:51 IST" duration-ms="11501" status="PASS">
+        <test-method signature="searchBox_guitars_searchbutton()[pri:3, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:14 IST" name="searchBox_guitars_searchbutton" finished-at="2021-02-25T15:07:23 IST" duration-ms="9837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchBox_guitars_searchbutton -->
-        <test-method signature="searchBox_guitars_enter()[pri:4, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:07:51 IST" name="searchBox_guitars_enter" finished-at="2021-02-23T10:08:01 IST" duration-ms="10671" status="PASS">
+        <test-method signature="searchBox_guitars_enter()[pri:4, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:23 IST" name="searchBox_guitars_enter" finished-at="2021-02-25T15:07:33 IST" duration-ms="9310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchBox_guitars_enter -->
-        <test-method signature="allCategories()[pri:5, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:01 IST" name="allCategories" finished-at="2021-02-23T10:08:10 IST" duration-ms="8315" status="PASS">
+        <test-method signature="allCategories()[pri:5, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:33 IST" name="allCategories" finished-at="2021-02-25T15:07:41 IST" duration-ms="8227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allCategories -->
-        <test-method signature="mainSportAndLeisure()[pri:6, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:10 IST" name="mainSportAndLeisure" finished-at="2021-02-23T10:08:17 IST" duration-ms="7772" status="PASS">
+        <test-method signature="mainSportAndLeisure()[pri:6, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:41 IST" name="mainSportAndLeisure" finished-at="2021-02-25T15:07:50 IST" duration-ms="8717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mainSportAndLeisure -->
-        <test-method signature="allCategoriesPage()[pri:7, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:17 IST" name="allCategoriesPage" finished-at="2021-02-23T10:08:28 IST" duration-ms="11038" status="PASS">
+        <test-method signature="allCategoriesPage()[pri:7, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:07:50 IST" name="allCategoriesPage" finished-at="2021-02-25T15:08:02 IST" duration-ms="11879" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allCategoriesPage -->
-        <test-method signature="sideSportAndLeisure()[pri:8, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:28 IST" name="sideSportAndLeisure" finished-at="2021-02-23T10:08:39 IST" duration-ms="10762" status="PASS">
+        <test-method signature="sideSportAndLeisure()[pri:8, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:08:02 IST" name="sideSportAndLeisure" finished-at="2021-02-25T15:08:13 IST" duration-ms="11246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sideSportAndLeisure -->
-        <test-method signature="sideMenuMorebutton()[pri:9, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:39 IST" name="sideMenuMorebutton" finished-at="2021-02-23T10:08:50 IST" duration-ms="10311" status="PASS">
+        <test-method signature="sideMenuMorebutton()[pri:9, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:08:13 IST" name="sideMenuMorebutton" finished-at="2021-02-25T15:08:23 IST" duration-ms="10323" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sideMenuMorebutton -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.navigateToGuitars@35047d03]" started-at="2021-02-23T10:08:50 IST" name="afterClass" finished-at="2021-02-23T10:08:54 IST" duration-ms="4141" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.navigateToGuitars@418e7838]" started-at="2021-02-25T15:08:23 IST" name="afterClass" finished-at="2021-02-25T15:08:27 IST" duration-ms="4118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- finalProject_zapGuitars.navigateToGuitars -->
       <class name="finalProject_zapGuitars.multiChoiceWindow">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:11:50 IST" name="beforeClass" finished-at="2021-02-23T10:11:56 IST" duration-ms="5602" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:11:08 IST" name="beforeClass" finished-at="2021-02-25T15:11:13 IST" duration-ms="5791" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="MoreManufacturer()[pri:1, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:11:56 IST" name="MoreManufacturer" finished-at="2021-02-23T10:12:11 IST" duration-ms="15135" status="PASS">
+        <test-method signature="MoreManufacturer()[pri:1, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:11:13 IST" name="MoreManufacturer" finished-at="2021-02-25T15:11:29 IST" duration-ms="15206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MoreManufacturer -->
-        <test-method signature="openMultiChoiceWindow()[pri:2, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:12:11 IST" name="openMultiChoiceWindow" finished-at="2021-02-23T10:12:22 IST" duration-ms="11253" status="PASS">
+        <test-method signature="openMultiChoiceWindow()[pri:2, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:11:29 IST" name="openMultiChoiceWindow" finished-at="2021-02-25T15:11:40 IST" duration-ms="11236" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openMultiChoiceWindow -->
-        <test-method signature="chooseOneFilter()[pri:3, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:12:22 IST" name="chooseOneFilter" finished-at="2021-02-23T10:12:37 IST" duration-ms="14228" status="PASS">
+        <test-method signature="chooseOneFilter()[pri:3, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:11:40 IST" name="chooseOneFilter" finished-at="2021-02-25T15:11:54 IST" duration-ms="14217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chooseOneFilter -->
-        <test-method signature="oneFilterOnly()[pri:4, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:12:37 IST" name="oneFilterOnly" finished-at="2021-02-23T10:13:11 IST" depends-on-methods="finalProject_zapGuitars.multiChoiceWindow.chooseOneFilter" duration-ms="33821" status="PASS">
+        <test-method signature="oneFilterOnly()[pri:4, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:11:54 IST" name="oneFilterOnly" finished-at="2021-02-25T15:12:28 IST" depends-on-methods="finalProject_zapGuitars.multiChoiceWindow.chooseOneFilter" duration-ms="34384" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- oneFilterOnly -->
-        <test-method signature="alphabeticalOrder()[pri:5, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:13:11 IST" name="alphabeticalOrder" finished-at="2021-02-23T10:13:27 IST" duration-ms="16752" status="PASS">
+        <test-method signature="alphabeticalOrder()[pri:5, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:12:28 IST" name="alphabeticalOrder" finished-at="2021-02-25T15:12:45 IST" duration-ms="16516" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- alphabeticalOrder -->
-        <test-method signature="numericalOrder()[pri:6, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:13:27 IST" name="numericalOrder" finished-at="2021-02-23T10:13:32 IST" duration-ms="4867" status="PASS">
+        <test-method signature="numericalOrder()[pri:6, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:12:45 IST" name="numericalOrder" finished-at="2021-02-25T15:12:50 IST" duration-ms="4887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- numericalOrder -->
-        <test-method signature="checkingBoxes()[pri:7, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:13:32 IST" name="checkingBoxes" finished-at="2021-02-23T10:14:29 IST" duration-ms="56562" status="FAIL">
+        <test-method signature="checkingBoxes()[pri:7, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:12:50 IST" name="checkingBoxes" finished-at="2021-02-25T15:13:46 IST" duration-ms="55735" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Filter or List are incorrect expected [false] but found [true]]]>
@@ -349,7 +349,7 @@ at org.testng.Assert.fail(Assert.java:97)
 at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:751)
-at finalProject_zapGuitars.multiChoiceWindow.checkingBoxes(multiChoiceWindow.java:256)
+at finalProject_zapGuitars.multiChoiceWindow.checkingBoxes(multiChoiceWindow.java:257)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -384,33 +384,33 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkingBoxes -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.multiChoiceWindow@4c9f8c13]" started-at="2021-02-23T10:14:29 IST" name="afterClass" finished-at="2021-02-23T10:14:33 IST" duration-ms="4124" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.multiChoiceWindow@cd3fee8]" started-at="2021-02-25T15:13:46 IST" name="afterClass" finished-at="2021-02-25T15:13:50 IST" duration-ms="4123" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- finalProject_zapGuitars.multiChoiceWindow -->
       <class name="finalProject_zapGuitars.filtersTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:09:37 IST" name="beforeClass" finished-at="2021-02-23T10:09:42 IST" duration-ms="5722" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:09:14 IST" name="beforeClass" finished-at="2021-02-25T15:09:19 IST" duration-ms="5067" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="yamahaFilter()[pri:1, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:09:42 IST" name="yamahaFilter" finished-at="2021-02-23T10:10:22 IST" duration-ms="39132" status="PASS">
+        <test-method signature="yamahaFilter()[pri:1, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:09:19 IST" name="yamahaFilter" finished-at="2021-02-25T15:09:43 IST" duration-ms="23897" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- yamahaFilter -->
-        <test-method signature="classicGuitarFilter()[pri:2, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:10:22 IST" name="classicGuitarFilter" finished-at="2021-02-23T10:10:51 IST" duration-ms="29902" status="PASS">
+        <test-method signature="classicGuitarFilter()[pri:2, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:09:43 IST" name="classicGuitarFilter" finished-at="2021-02-25T15:10:08 IST" duration-ms="24715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- classicGuitarFilter -->
-        <test-method signature="priceFilter()[pri:3, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:10:51 IST" name="priceFilter" finished-at="2021-02-23T10:11:16 IST" duration-ms="24332" status="PASS">
+        <test-method signature="priceFilter()[pri:3, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:10:08 IST" name="priceFilter" finished-at="2021-02-25T15:10:32 IST" duration-ms="24624" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- priceFilter -->
-        <test-method signature="removingOneFilter()[pri:4, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:11:16 IST" name="removingOneFilter" finished-at="2021-02-23T10:11:50 IST" duration-ms="34518" status="PASS">
+        <test-method signature="removingOneFilter()[pri:4, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:10:32 IST" name="removingOneFilter" finished-at="2021-02-25T15:11:07 IST" duration-ms="35158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removingOneFilter -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.filtersTest@769f71a9]" started-at="2021-02-23T10:11:50 IST" name="afterClass" finished-at="2021-02-23T10:11:50 IST" duration-ms="169" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:finalProject_zapGuitars.filtersTest@3c130745]" started-at="2021-02-25T15:11:07 IST" name="afterClass" finished-at="2021-02-25T15:11:08 IST" duration-ms="182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

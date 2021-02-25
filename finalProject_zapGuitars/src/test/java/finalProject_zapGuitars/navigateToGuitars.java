@@ -3,7 +3,7 @@ package finalProject_zapGuitars;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import tools.setUp;
+import tools.appSettings;
 import tools.zapMainPageID;
 import tools.zapGuitars_POF;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class navigateToGuitars extends setUp {
+public class navigateToGuitars extends appSettings {
 	
 	static final String guitarPageTitle = "גיטרות - זאפ";
 	static boolean isPageCorrect;

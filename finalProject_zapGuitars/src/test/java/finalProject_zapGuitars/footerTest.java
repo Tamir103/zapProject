@@ -7,7 +7,7 @@ package finalProject_zapGuitars;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import tools.setUp;
+import tools.appSettings;
 import tools.zapMainPageID;
 import org.testng.annotations.BeforeClass;
 
@@ -19,7 +19,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 
-public class footerTest extends setUp {
+public class footerTest extends appSettings {
 
 	static boolean isPageTitleTrue;
 	static String expectedTitle;

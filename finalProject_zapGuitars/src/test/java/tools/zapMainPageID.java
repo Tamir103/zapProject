@@ -1,7 +1,3 @@
-/*
- * The class is named elements because those elements id's are similar in all pages of the website
- * */
-
 package tools;
 
 import org.openqa.selenium.WebElement;

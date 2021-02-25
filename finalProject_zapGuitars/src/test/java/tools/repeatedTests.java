@@ -6,7 +6,7 @@ import java.util.List;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
-public class repeatedTests extends setUp {
+public class repeatedTests extends appSettings {
 
 	static boolean isFilterOn;
 	static String expected;
